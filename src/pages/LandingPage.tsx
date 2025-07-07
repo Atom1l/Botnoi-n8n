@@ -81,7 +81,7 @@ export default function LandingPage() {
               {t('landing.tryit')}
             </h3>
             <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
-              {t('landing.tryitdetails')}
+              dangerouslySetInnerHTML={{ __html: t('landing.tryitdetails') }}
             </p>
           </div>
         </div>
