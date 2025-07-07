@@ -34,7 +34,7 @@ export default function LandingPage() {
               alt="Botnoi" 
               className="h-36 w-36 mb-8 pb-2 mx-auto border border-[7px] border-[#01bffb] rounded-full transition-all duration-200 transform hover:scale-105"
           />
-          <h1 className={`text-4xl md:text-6xl font-bold text-gray-900 mb-6 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+          <h1 className={`font-en text-4xl md:text-6xl font-bold text-gray-900 mb-6`}>
             {t('landing.title')}
           </h1>
           <p className={`text-xl text-gray-600 mb-8 max-w-3xl mx-auto ${language === 'th' ? 'font-thai' : 'font-en'}`}>
