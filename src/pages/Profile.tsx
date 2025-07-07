@@ -169,21 +169,6 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Danger Zone */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mt-8 border border-red-200">
-          <h2 className={`text-lg font-semibold text-red-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.dangerZone')}</h2>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between py-3">
-              <div>
-                <p className={`font-medium text-red-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.deleteAccount')}</p>
-                <p className={`text-sm text-red-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.deleteAccountDesc')}</p>
-              </div>
-              <button className={`bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                {t('profile.deleteAccount')}
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
