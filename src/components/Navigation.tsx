@@ -49,7 +49,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
 
   return (
     <nav className="bg-white shadow-md border-b w-full">
-      <div className="w-full pb-5 px-4 sm:px-6 lg:px-8">
+      <div className="w-full pb-4 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <button 
             onClick={handleLogoClick}
