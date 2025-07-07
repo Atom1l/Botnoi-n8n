@@ -27,7 +27,7 @@ export default function LandingPage() {
       <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] px-4 sm:px-6 lg:px-8 border border-black">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] px-4 sm:px-6 lg:px-8 border ">
         <div className="text-center mt-10 mb-16 max-w-4xl">
           <img 
               src="/botnoi.svg" 
@@ -50,7 +50,7 @@ export default function LandingPage() {
         </div>
         
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl">
+        <div className="grid md:grid-cols-3 gap-8 ">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
               <Key className="h-8 w-8 text-blue-600" />
