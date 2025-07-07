@@ -59,7 +59,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
             <img 
               src="/botnoi_voice.svg" 
               alt="Botnoi" 
-              className="h-16 w-16"
+              className="h-24 w-24"
             />
           </button>
           
