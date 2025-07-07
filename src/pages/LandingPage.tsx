@@ -26,16 +26,11 @@ export default function LandingPage() {
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
         <div className="text-center mt-20 mb-16 max-w-4xl">
-          <div className="logo-container h-36 w-36 mb-8 mx-auto">
-            <div className="wave-ring">
-              <img 
-                src="/botnoi.svg" 
-                alt="Botnoi" 
-                className="h-36 w-36 pb-2 border border-[7px] border-[#01bffb] rounded-full relative z-10"
-            />
-            </div>
-            
-          </div>
+          <img 
+              src="/botnoi.svg" 
+              alt="Botnoi" 
+              className="h-36 w-36 mb-8 pb-2 mx-auto border border-[7px] border-[#01bffb] rounded-full"
+          />
           <h1 className="font-en text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             BOTNOi
           </h1>
