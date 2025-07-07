@@ -57,7 +57,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
             disabled={!user}
           >
             <img 
-              src="/botnoi.svg" 
+              src="/botnoi_voice.svg" 
               alt="Botnoi" 
               className="h-16 w-16"
             />
