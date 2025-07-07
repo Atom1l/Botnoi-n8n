@@ -34,7 +34,7 @@ export default function LandingPage() {
           <h1 className="font-en text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             BOTNOi
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="font-en text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Generate, manage, and secure your API keys with enterprise-grade security. 
             Perfect for n8n workflows and automation.
           </p>
