@@ -24,7 +24,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8 bg-gray-200">
         <div className="text-center mt-20 mb-16 max-w-4xl">
           <img 
               src="/botnoi.svg" 
@@ -47,7 +47,7 @@ export default function LandingPage() {
         </div>
 
         {/* Features */}
-        <div className="bg-white border border-black w-full flex justify-center">
+        <div className="bg-white border border-black w-full py-12 flex justify-center">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
