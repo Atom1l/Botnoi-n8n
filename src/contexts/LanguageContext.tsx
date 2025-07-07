@@ -29,7 +29,7 @@ const translations = {
     
     // Landing Page
     'landing.title': 'BOTNOi',
-    'landing.subtitle': 'Easily convert any text into realistic speech,<br/> helping you work smoothly, finish tasks easily, and do it anywhere.',
+    'landing.subtitle': 'Easily convert any text into realistic speech, helping you work smoothly, finish tasks easily, and do it anywhere.',
     'landing.getStarted': 'Get Started',
     'landing.welcome': 'Welcome!',
     'landing.chooseSignIn': 'Choose your preferred sign-in method',
