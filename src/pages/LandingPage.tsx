@@ -25,7 +25,7 @@ export default function LandingPage() {
       
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mt-16 mb-16">
+        <div className="text-center mt-18 mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Secure API Key Management
             <span className="text-blue-600 block">for n8n Integration</span>
