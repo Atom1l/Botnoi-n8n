@@ -43,12 +43,6 @@ export default function LandingPage() {
             <ArrowRight className="ml-2 h-5 w-5 inline" />
           </button>
           <div className="mt-4">
-            <button
-              onClick={() => setShowLogin(true)}
-              className="text-blue-600 hover:text-blue-700 underline"
-            >
-              Already have an account? Sign In
-            </button>
           </div>
         </div>
 
