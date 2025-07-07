@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { User, Mail, Calendar, Shield, Edit2, Save, X } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 export default function Profile() {
   const { user } = useAuth();
+  const { language, t } = useLanguage();
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(user?.name || '');
 
@@ -66,10 +68,10 @@ export default function Profile() {
                     type="text"
                     value={editedName}
                     onChange={(e) => setEditedName(e.target.value)}
-                    className="text-2xl font-bold text-gray-900 bg-transparent border-b-2 border-blue-600 focus:outline-none"
+                    className={`text-2xl font-bold text-gray-900 bg-transparent border-b-2 border-blue-600 focus:outline-none ${language === 'th' ? 'font-thai' : 'font-en'}`}
                   />
                 ) : (
-                  <h1 className="text-2xl font-bold text-gray-900">{user?.name}</h1>
+                  <h1 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
                 )}
                 <button
                   onClick={() => isEditing ? handleSave() : setIsEditing(true)}
@@ -99,23 +101,23 @@ export default function Profile() {
 
         {/* Account Information */}
         <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Account Information</h2>
+          <h2 className={`text-lg font-semibold text-gray-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountInfo')}</h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400" />
                 <div>
-                  <p className="font-medium text-gray-900">Email Address</p>
+                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.emailAddress')}</p>
                   <p className="text-sm text-gray-600">{user?.email}</p>
                 </div>
               </div>
-              <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">Verified</span>
+              <span className={`text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.verified')}</span>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">
                 <Calendar className="h-5 w-5 text-gray-400" />
                 <div>
-                  <p className="font-medium text-gray-900">Account Created</p>
+                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountCreated')}</p>
                   <p className="text-sm text-gray-600">January 15, 2024</p>
                 </div>
               </div>
@@ -124,44 +126,44 @@ export default function Profile() {
               <div className="flex items-center space-x-3">
                 <Shield className="h-5 w-5 text-gray-400" />
                 <div>
-                  <p className="font-medium text-gray-900">Authentication Method</p>
-                  <p className="text-sm text-gray-600 capitalize">{user?.provider} Sign-in</p>
+                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.authMethod')}</p>
+                  <p className={`text-sm text-gray-600 capitalize ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.provider} {t('profile.signIn')}</p>
                 </div>
               </div>
-              <span className="text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full">Active</span>
+              <span className={`text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</span>
             </div>
           </div>
         </div>
 
         {/* Security Settings */}
         <div className="bg-white rounded-xl shadow-sm p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Security Settings</h2>
+          <h2 className={`text-lg font-semibold text-gray-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.securitySettings')}</h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div>
-                <p className="font-medium text-gray-900">Two-Factor Authentication</p>
-                <p className="text-sm text-gray-600">Add an extra layer of security to your account</p>
+                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.twoFactor')}</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.twoFactorDesc')}</p>
               </div>
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                Enable
+              <button className={`text-blue-600 hover:text-blue-700 font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                {t('profile.enable')}
               </button>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div>
-                <p className="font-medium text-gray-900">Password</p>
-                <p className="text-sm text-gray-600">Change your account password</p>
+                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.password')}</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.changePassword')}</p>
               </div>
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                Change
+              <button className={`text-blue-600 hover:text-blue-700 font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                {t('profile.change')}
               </button>
             </div>
             <div className="flex items-center justify-between py-3">
               <div>
-                <p className="font-medium text-gray-900">Active Sessions</p>
-                <p className="text-sm text-gray-600">Manage your active sessions</p>
+                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.activeSessions')}</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.activeSessionsDesc')}</p>
               </div>
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                View
+              <button className={`text-blue-600 hover:text-blue-700 font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                {t('profile.view')}
               </button>
             </div>
           </div>
@@ -169,15 +171,15 @@ export default function Profile() {
 
         {/* Danger Zone */}
         <div className="bg-white rounded-xl shadow-sm p-6 mt-8 border border-red-200">
-          <h2 className="text-lg font-semibold text-red-900 mb-4">Danger Zone</h2>
+          <h2 className={`text-lg font-semibold text-red-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.dangerZone')}</h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between py-3">
               <div>
-                <p className="font-medium text-red-900">Delete Account</p>
-                <p className="text-sm text-red-600">Permanently delete your account and all associated data</p>
+                <p className={`font-medium text-red-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.deleteAccount')}</p>
+                <p className={`text-sm text-red-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.deleteAccountDesc')}</p>
               </div>
-              <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                Delete Account
+              <button className={`bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                {t('profile.deleteAccount')}
               </button>
             </div>
           </div>

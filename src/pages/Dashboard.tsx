@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Copy, Eye, EyeOff, RefreshCw, Code, CheckCircle, ExternalLink, Settings, Zap, Book, Key } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
@@ -14,6 +15,7 @@ interface ApiKey {
 
 export default function Dashboard() {
   const { user } = useAuth();
+  const { language, t } = useLanguage();
   const [apiKey, setApiKey] = useState<ApiKey>({
     id: '1',
     key: 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
@@ -111,10 +113,10 @@ export default function Dashboard() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Welcome back, {user?.name}!
+          <h1 className={`text-3xl font-bold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+            {t('dashboard.welcomeBack')}, {user?.name}!
           </h1>
-          <p className="text-gray-600">Manage your Voice API key and integrate with n8n</p>
+          <p className={`text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.subtitle')}</p>
         </div>
 
         {/* Stats */}
@@ -122,7 +124,7 @@ export default function Dashboard() {
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Total Requests</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.totalRequests')}</p>
                 <p className="text-2xl font-bold text-gray-900">{apiKey.requests.toLocaleString()}</p>
               </div>
               <div className="bg-green-100 rounded-full p-3">
@@ -133,8 +135,8 @@ export default function Dashboard() {
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Status</p>
-                <p className="text-2xl font-bold text-green-600">Active</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.status')}</p>
+                <p className={`text-2xl font-bold text-green-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</p>
               </div>
               <div className="bg-blue-100 rounded-full p-3">
                 <Key className="h-6 w-6 text-blue-600" />
@@ -144,9 +146,9 @@ export default function Dashboard() {
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Last Used</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.lastUsed')}</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : 'Never'}
+                  {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : t('dashboard.never')}
                 </p>
               </div>
               <div className="bg-purple-100 rounded-full p-3">
@@ -160,14 +162,14 @@ export default function Dashboard() {
         <div className="bg-white rounded-xl shadow-sm mb-8">
           <div className="px-6 py-4 border-b border-gray-200">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900">Your API Key</h2>
+              <h2 className={`text-lg font-semibold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.yourApiKey')}</h2>
               <button
                 onClick={regenerateApiKey}
                 disabled={isRegenerating}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 disabled:opacity-50"
+                className={`bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 disabled:opacity-50 ${language === 'th' ? 'font-thai' : 'font-en'}`}
               >
                 <RefreshCw className={`h-4 w-4 ${isRegenerating ? 'animate-spin' : ''}`} />
-                <span>{isRegenerating ? 'Regenerating...' : 'Regenerate'}</span>
+                <span>{isRegenerating ? t('dashboard.regenerating') : t('dashboard.regenerate')}</span>
               </button>
             </div>
           </div>
@@ -175,7 +177,7 @@ export default function Dashboard() {
           <div className="p-6">
             <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
               <div className="flex items-center space-x-3 mb-4">
-                <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span className={`px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                   {apiKey.status}
                 </span>
               </div>
@@ -196,19 +198,18 @@ export default function Dashboard() {
                   <Copy className="h-5 w-5" />
                 </button>
               </div>
-              <div className="flex items-center space-x-4 text-sm text-gray-500">
-                <span>Created: {apiKey.created.toLocaleDateString()}</span>
-                <span>Requests: {apiKey.requests.toLocaleString()}</span>
+              <div className={`flex items-center space-x-4 text-sm text-gray-500 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                <span>{t('dashboard.created')}: {apiKey.created.toLocaleDateString()}</span>
+                <span>{t('dashboard.requests')}: {apiKey.requests.toLocaleString()}</span>
                 <span>
-                  Last used: {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : 'Never'}
+                  {t('dashboard.lastUsed')}: {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : t('dashboard.never')}
                 </span>
               </div>
             </div>
 
             <div className="mt-4 p-4 bg-yellow-50 rounded-lg">
-              <p className="text-sm text-yellow-800">
-                <strong>Important:</strong> Keep your API key secure and never share it publicly. 
-                If you suspect it has been compromised, regenerate it immediately.
+              <p className={`text-sm text-yellow-800 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                <strong>{t('dashboard.important')}:</strong> {t('dashboard.securityNote')}
               </p>
             </div>
           </div>
@@ -218,28 +219,28 @@ export default function Dashboard() {
         <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
           <div className="flex items-center space-x-2 mb-4">
             <Book className="h-6 w-6 text-blue-600" />
-            <h2 className="text-lg font-semibold text-gray-900">Quick Start Guide</h2>
+            <h2 className={`text-lg font-semibold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.quickStart')}</h2>
           </div>
           <div className="space-y-3">
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
               <div>
-                <p className="font-medium text-gray-900">Step 1: Copy API Key</p>
-                <p className="text-sm text-gray-600">Use the copy button above to get your API key</p>
+                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.step1')}</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.step1Desc')}</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
               <div>
-                <p className="font-medium text-gray-900">Step 2: Add to n8n</p>
-                <p className="text-sm text-gray-600">Configure HTTP Request node with Authorization header</p>
+                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.step2')}</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.step2Desc')}</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
               <div>
-                <p className="font-medium text-gray-900">Step 3: Start Building</p>
-                <p className="text-sm text-gray-600">Use the examples below to create your workflows</p>
+                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.step3')}</p>
+                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.step3Desc')}</p>
               </div>
             </div>
           </div>
