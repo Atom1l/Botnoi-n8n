@@ -47,7 +47,7 @@ export default function LandingPage() {
         </div>
 
         {/* Features */}
-        <div clasName="bg-white border border-black w-full py-12">
+        <div className="bg-white border border-black w-full py-12">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full border border-black">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
