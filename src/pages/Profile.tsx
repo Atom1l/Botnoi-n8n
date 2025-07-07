@@ -163,7 +163,6 @@ export default function Profile() {
                   <Copy className="h-4 w-4" />
                   <span className="text-xs">{copiedApiKey ? 'Copied!' : 'Copy'}</span>
                 </button>
-                <span className={`text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</span>
               </div>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
