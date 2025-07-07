@@ -24,8 +24,8 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto mt-10 px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mt-16 mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Secure API Key Management
             <span className="text-blue-600 block">for n8n Integration</span>
