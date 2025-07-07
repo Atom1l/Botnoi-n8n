@@ -58,7 +58,9 @@ export default function LandingPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}">
               {t('landing.login')}
             </h3>
-            <p className="font-en text-gray-600">Log In with a simple click!</p>
+            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
+              {t('landing.getapikey')}
+            </p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
