@@ -98,7 +98,6 @@ const translations = {
     'nav.documentation': 'เอกสาร',
     
     // Landing Page
-    'landing.title': 'BOTNOi',
     'landing.subtitle': 'แปลงข้อความเป็นเสียงพูดที่สมจริงได้อย่างง่ายดาย ช่วยให้คุณทำงานได้อย่างราบรื่น เสร็จงานได้ง่าย และทำได้ทุกที่',
     'landing.getStarted': 'เริ่มต้นใช้งาน',
     'landing.welcome': 'ยินดีต้อนรับ!',
