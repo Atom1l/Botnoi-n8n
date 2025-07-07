@@ -76,6 +76,7 @@ const translations = {
     'profile.emailAddress': 'Email Address',
     'profile.verified': 'Verified',
     'profile.uid': 'UserId',
+    'profile.apitoken': 'API Key',
     'profile.authMethod': 'Authentication Method',
     'profile.signIn': 'Sign-in',
     
@@ -139,6 +140,7 @@ const translations = {
     'profile.emailAddress': 'ที่อยู่อีเมล',
     'profile.verified': 'ยืนยันแล้ว',
     'profile.uid': 'UserId',
+    'profile.apitoken': 'API Key',
     'profile.authMethod': 'วิธีการยืนยันตัวตน',
     'profile.signIn': 'เข้าสู่ระบบ',
     
