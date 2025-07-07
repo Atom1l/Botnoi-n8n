@@ -2,10 +2,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface User {
   id: string;
+  userId: string;
   email: string;
   name: string;
   avatar?: string;
   provider: 'email' | 'google' | 'line';
+  apiKey?: string;
 }
 
 interface AuthContextType {
@@ -45,11 +47,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Mock authentication - in production, this would be an API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
+    const mockApiKey = 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    
     const mockUser: User = {
       id: '1',
+      userId: 'USR_' + Math.random().toString(36).substring(2, 10).toUpperCase(),
       email,
       name: email.split('@')[0],
-      provider: 'email'
+      provider: 'email',
+      apiKey: mockApiKey
     };
     
     setUser(mockUser);
@@ -62,12 +68,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Mock Google authentication
     await new Promise(resolve => setTimeout(resolve, 1000));
     
+    const mockApiKey = 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    
     const mockUser: User = {
       id: '2',
+      userId: 'USR_' + Math.random().toString(36).substring(2, 10).toUpperCase(),
       email: 'user@gmail.com',
       name: 'Google User',
       avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
-      provider: 'google'
+      provider: 'google',
+      apiKey: mockApiKey
     };
     
     setUser(mockUser);
@@ -80,12 +90,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Mock Line authentication
     await new Promise(resolve => setTimeout(resolve, 1000));
     
+    const mockApiKey = 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    
     const mockUser: User = {
       id: '3',
+      userId: 'USR_' + Math.random().toString(36).substring(2, 10).toUpperCase(),
       email: 'user@line.me',
       name: 'Line User',
       avatar: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=150',
-      provider: 'line'
+      provider: 'line',
+      apiKey: mockApiKey
     };
     
     setUser(mockUser);

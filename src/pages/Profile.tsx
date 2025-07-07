@@ -115,19 +115,31 @@ export default function Profile() {
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">
-                <Calendar className="h-5 w-5 text-gray-400" />
+                <User className="h-5 w-5 text-gray-400" />
                 <div>
                   <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.uid')}</p>
-                  <p className="text-sm text-gray-600">01234567890</p>
+                  <p className="text-sm text-gray-600 font-mono">{user?.userId}</p>
                 </div>
               </div>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">
-                <Calendar className="h-5 w-5 text-gray-400" />
+                <Shield className="h-5 w-5 text-gray-400" />
                 <div>
                   <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.apitoken')}</p>
-                  <p className="text-sm text-gray-600"></p>
+                  <p className="text-sm text-gray-600 font-mono">
+                    {user?.apiKey ? user.apiKey.substring(0, 8) + '•'.repeat(20) + user.apiKey.substring(user.apiKey.length - 4) : 'ไม่มี API Key'}
+                  </p>
+                </div>
+              </div>
+              <span className={`text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</span>
+            </div>
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <Calendar className="h-5 w-5 text-gray-400" />
+                <div>
+                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountCreated')}</p>
+                  <p className="text-sm text-gray-600">January 15, 2024</p>
                 </div>
               </div>
             </div>

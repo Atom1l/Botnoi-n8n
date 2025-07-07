@@ -16,14 +16,14 @@ interface ApiKey {
 export default function Dashboard() {
   const { user } = useAuth();
   const { language, t } = useLanguage();
-  const [apiKey, setApiKey] = useState<ApiKey>({
-    id: '1',
-    key: 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+  const [apiKey, setApiKey] = useState<ApiKey>(() => ({
+    id: user?.id || '1',
+    key: user?.apiKey || 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
     created: new Date('2024-01-15'),
     lastUsed: new Date('2024-01-20'),
     requests: 1247,
     status: 'active'
-  });
+  }));
   const [showKey, setShowKey] = useState(false);
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
