@@ -35,7 +35,7 @@ export default function LandingPage() {
             BOTNOi
           </h1>
           <p className="font-en text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Easily turn any text into realistic speech.
+            Easily turn any text into realistic speech, helping you work smoothly, whether it's voice recording, dubbing commercials, making teaching materials, reading news, reading presentation slides, podcasts, reading novels, finishing work easily, doing it anywhere.
           </p>
           <button
             onClick={() => setShowLogin(true)}
