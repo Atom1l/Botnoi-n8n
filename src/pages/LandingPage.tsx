@@ -69,8 +69,7 @@ export default function LandingPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}">
               {t('landing.getapikey')}
             </h3>
-            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
-              {t('landing.getapikeydetails')}
+            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}" dangerouslySetInnerHTML={{ __html: t('landing.getapikeydetails') }}>
             </p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
@@ -82,7 +81,8 @@ export default function LandingPage() {
             </h3>
             <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
             </p>
-            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}" dangerouslySetInnerHTML={{ __html: t('landing.tryitdetails') }}>
+            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}" 
+              dangerouslySetInnerHTML={{ __html: t('landing.tryitdetails') }}>
             </p>
           </div>
         </div>
