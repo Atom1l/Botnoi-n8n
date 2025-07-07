@@ -28,6 +28,7 @@ const translations = {
     'nav.documentation': 'Documentation',
     
     // Landing Page
+    'landing.title': 'BOTNOi',
     'landing.subtitle': 'Easily convert any text into realistic speech, helping you work smoothly, finish tasks easily, and do it anywhere.',
     'landing.getStarted': 'Get Started',
     'landing.welcome': 'Welcome!',
@@ -97,6 +98,7 @@ const translations = {
     'nav.documentation': 'เอกสาร',
     
     // Landing Page
+    'landing.title': 'BOTNOi',
     'landing.subtitle': 'แปลงข้อความเป็นเสียงพูดที่สมจริงได้อย่างง่ายดาย ช่วยให้คุณทำงานได้อย่างราบรื่น เสร็จงานได้ง่าย และทำได้ทุกที่',
     'landing.getStarted': 'เริ่มต้นใช้งาน',
     'landing.welcome': 'ยินดีต้อนรับ!',
