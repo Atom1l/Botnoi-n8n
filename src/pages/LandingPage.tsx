@@ -77,8 +77,12 @@ export default function LandingPage() {
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
               <Shield className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Try it</h3>
-            <p className="font-en text-gray-600">Try your Botnoivoice <br></br> Text-to-Speech!</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}">
+              {t('landing.tryit')}
+            </h3>
+            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
+              {t('landing.tryitdetails')}
+            </p>
           </div>
         </div>
 
