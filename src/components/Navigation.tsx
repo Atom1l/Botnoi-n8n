@@ -124,7 +124,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
             <div className="flex items-center space-x-4">
               <button
                 onClick={onLoginClick}
-                className="bg-[#01bffb] text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                className="bg-[#212121] text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
                   Sign In
               </button>
             </div>
