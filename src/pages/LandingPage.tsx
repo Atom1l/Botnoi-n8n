@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Zap, Shield, ArrowRight, Mail, Eye, EyeOff, Key } from 'lucide-react';
+import { Zap, Shield, ArrowRight, Mail, Eye, EyeOff, Key, LogIn, AudioLines } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 export default function LandingPage() {
