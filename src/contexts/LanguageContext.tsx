@@ -34,7 +34,7 @@ const translations = {
     'landing.login': 'Log In',
     'landing.getapikey': 'Get API Key',
     'landing.tryit': 'Try it',
-    'landing.logindetails': 'Log In with a simple click!',
+    'landing.logindetails': 'Log in easily <br/> with a simple click!',
     'landing.getapikeydetails': 'Get API Key and <br/> go to our website.',
     'landing.tryitdetails': 'Try our Botnoivoice <br/> Text-to-Speech!',
     'landing.welcome': 'Welcome!',
