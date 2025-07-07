@@ -29,7 +29,7 @@ export default function LandingPage() {
           <img 
               src="/botnoi.svg" 
               alt="Botnoi" 
-              className="h-36 w-36 mb-8 pb-2 mx-auto border border-[3px] border-[#01bffb] rounded-full"
+              className="h-36 w-36 mb-8 pb-2 mx-auto border border-[7px] border-[#01bffb] rounded-full"
           />
           <h1 className="font-en text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             BOTNOi
