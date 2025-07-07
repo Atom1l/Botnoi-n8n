@@ -48,7 +48,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   };
 
   return (
-    <nav className="bg-white shadow-sm border-b w-full">
+    <nav className="bg-white shadow-md border-b w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <button 
