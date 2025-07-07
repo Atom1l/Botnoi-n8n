@@ -74,7 +74,7 @@ export default function LandingPage() {
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
-              <Shield className="h-8 w-8 text-purple-600" />
+              <AudioLines className="h-8 w-8 text-purple-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}">
               {t('landing.tryit')}
