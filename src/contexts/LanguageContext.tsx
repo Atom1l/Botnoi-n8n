@@ -110,7 +110,7 @@ const translations = {
     'landing.login': 'เข้าสู่ระบบ',
     'landing.getapikey': 'รับ API Key',
     'landing.tryit': 'ทดลองใช้งาน',
-    'landing.logindetails': 'เข้าสู่ระบบง่าย ในไม่กี่คลิก!',
+    'landing.logindetails': 'เข้าสู่ระบบง่าย! <br/> ในไม่กี่คลิก',
     'landing.getapikeydetails': 'รับ API Key และ <br/> ไปยังเว็บไซต์ของเรา',
     'landing.tryitdetails': 'ทดลองใช้งาน Botnoivoice <br/> Text-to-Speech!',
     'landing.welcome': 'ยินดีต้อนรับ!',
