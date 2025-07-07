@@ -117,7 +117,7 @@ export default function Profile() {
               <div className="flex items-center space-x-3">
                 <Calendar className="h-5 w-5 text-gray-400" />
                 <div>
-                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountCreated')}</p>
+                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.uid')}</p>
                   <p className="text-sm text-gray-600">01234567890</p>
                 </div>
               </div>
