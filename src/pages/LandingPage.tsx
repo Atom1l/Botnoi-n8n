@@ -24,7 +24,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8 bg-gray-200">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
         <div className="text-center mt-20 mb-16 max-w-4xl">
           <img 
               src="/botnoi.svg" 
@@ -47,29 +47,27 @@ export default function LandingPage() {
         </div>
 
         {/* Features */}
-        <div className="bg-white border border-black w-full py-12 flex justify-center">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Key className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Log In</h3>
-              <p className="font-en text-gray-600">Generate secure API keys instantly with customizable permissions and expiration dates.</p>
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full border border-black">
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
+            <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Key className="h-8 w-8 text-blue-600" />
             </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
-              <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Get API Key</h3>
-              <p className="font-en text-gray-600">Seamlessly integrate with n8n workflows using our comprehensive API documentation.</p>
+            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Log In</h3>
+            <p className="font-en text-gray-600">Generate secure API keys instantly with customizable permissions and expiration dates.</p>
+          </div>
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
+            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Zap className="h-8 w-8 text-green-600" /> 
             </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
-              <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-purple-600" />
-              </div>
-              <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Try it</h3>
-              <p className="font-en text-gray-600">Bank-grade encryption and security measures to protect your API keys and data.</p>
+            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Get API Key</h3>
+            <p className="font-en text-gray-600">Seamlessly integrate with n8n workflows using our comprehensive API documentation.</p>
+          </div>
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
+            <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Shield className="h-8 w-8 text-purple-600" />
             </div>
+            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Try it</h3>
+            <p className="font-en text-gray-600">Bank-grade encryption and security measures to protect your API keys and data.</p>
           </div>
         </div>
       </main>
