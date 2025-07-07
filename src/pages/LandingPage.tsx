@@ -88,7 +88,7 @@ export default function LandingPage() {
               <img 
                 src="/botnoi.svg" 
                 alt="Botnoi" 
-                className="h-20 w-20 mx-auto mb-4 border border-[8px] border-[#01bffb]"
+                className="h-20 w-20 mx-auto mb-4 border border-[5px] border-[#01bffb] rounded-full"
               />
               <h2 className="text-2xl font-bold text-gray-900">Welcome!</h2>
               <p className="text-gray-600">Choose your preferred sign-in method</p>
