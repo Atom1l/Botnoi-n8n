@@ -23,7 +23,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <div className="min-h-screen bg-white">
       <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
