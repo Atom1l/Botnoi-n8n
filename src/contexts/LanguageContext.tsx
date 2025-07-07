@@ -151,7 +151,7 @@ const translations = {
     'profile.accountInfo': 'ข้อมูลบัญชี',
     'profile.emailAddress': 'ที่อยู่อีเมล',
     'profile.verified': 'ยืนยันแล้ว',
-    'profile.accountCreated': 'สร้างบัญชีเมื่อ',
+    'profile.uid': 'UserId',
     'profile.authMethod': 'วิธีการยืนยันตัวตน',
     'profile.signIn': 'เข้าสู่ระบบ',
     'profile.securitySettings': 'การตั้งค่าความปลอดภัย',
