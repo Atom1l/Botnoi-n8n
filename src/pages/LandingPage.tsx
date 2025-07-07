@@ -40,7 +40,7 @@ export default function LandingPage() {
           </p>
           <button
             onClick={() => setShowLogin(true)}
-            className="bg-[#01bffb] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#05aee3] transition-all duration-200 transform hover:scale-102 shadow-lg"
+            className="bg-[#01bffb] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#05aee3] transition-all duration-200 transform hover:scale-105 shadow-md"
           >
             Get Started Free
             <ArrowRight className="ml-2 h-5 w-5 inline" />
