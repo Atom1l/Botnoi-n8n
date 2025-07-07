@@ -22,10 +22,11 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mt-16 mb-16">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Secure API Key Management
             <span className="text-blue-600 block">for n8n Integration</span>
@@ -41,12 +42,10 @@ export default function LandingPage() {
             Get Started Free
             <ArrowRight className="ml-2 h-5 w-5 inline" />
           </button>
-          <div className="mt-4">
-          </div>
         </div>
 
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Key className="h-8 w-8 text-blue-600" />
