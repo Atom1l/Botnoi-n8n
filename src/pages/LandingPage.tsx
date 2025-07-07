@@ -53,21 +53,21 @@ export default function LandingPage() {
             <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Key className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">API Key Generation</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Log In</h3>
             <p className="text-gray-600">Generate secure API keys instantly with customizable permissions and expiration dates.</p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Zap className="h-8 w-8 text-green-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">n8n Integration</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Get API Key</h3>
             <p className="text-gray-600">Seamlessly integrate with n8n workflows using our comprehensive API documentation.</p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Shield className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Enterprise Security</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Use it!</h3>
             <p className="text-gray-600">Bank-grade encryption and security measures to protect your API keys and data.</p>
           </div>
         </div>
