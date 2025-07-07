@@ -165,15 +165,6 @@ export default function Profile() {
                 </button>
               </div>
             </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center space-x-3">
-                <Calendar className="h-5 w-5 text-gray-400" />
-                <div>
-                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountCreated')}</p>
-                  <p className="text-sm text-gray-600">January 15, 2024</p>
-                </div>
-              </div>
-            </div>
             <div className="flex items-center justify-between py-3">
               <div className="flex items-center space-x-3">
                 <Shield className="h-5 w-5 text-gray-400" />
