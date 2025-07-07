@@ -75,7 +75,7 @@ const translations = {
     'profile.accountInfo': 'Account Information',
     'profile.emailAddress': 'Email Address',
     'profile.verified': 'Verified',
-    'profile.accountCreated': 'Account Created',
+    'profile.uid': 'UserId',
     'profile.authMethod': 'Authentication Method',
     'profile.signIn': 'Sign-in',
     'profile.securitySettings': 'Security Settings',
