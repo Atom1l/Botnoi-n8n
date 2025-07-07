@@ -25,7 +25,7 @@ export default function LandingPage() {
       
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 max-w-4xl">
+        <div className="text-center mt-16 mb-16 max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Secure API Key Management
             <span className="text-blue-600 block">for n8n Integration</span>
