@@ -47,7 +47,7 @@ export default function LandingPage() {
         </div>
 
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl w-full">
           <div className="bg-red p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Key className="h-8 w-8 text-blue-600" />
