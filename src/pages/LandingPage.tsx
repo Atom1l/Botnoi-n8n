@@ -67,7 +67,7 @@ export default function LandingPage() {
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Shield className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Use it!</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Try it</h3>
             <p className="text-gray-600">Bank-grade encryption and security measures to protect your API keys and data.</p>
           </div>
         </div>
