@@ -77,7 +77,7 @@ const translations = {
     'profile.verified': 'Verified',
     'profile.uid': 'UserId',
     'profile.authMethod': 'Authentication Method',
-
+    'profile.signIn': 'Sign-in',
     
     // Language
     'language.english': 'English',
