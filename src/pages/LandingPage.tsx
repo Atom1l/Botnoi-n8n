@@ -59,7 +59,7 @@ export default function LandingPage() {
               {t('landing.login')}
             </h3>
             <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
-              {t('landing.getapikey')}
+              {t('landing.logindetails')}
             </p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
