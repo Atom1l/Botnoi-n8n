@@ -14,7 +14,7 @@ interface ApiKey {
 }
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, updateApiKey } = useAuth();
   const { language, t } = useLanguage();
   const [apiKey, setApiKey] = useState<ApiKey>(() => ({
     id: user?.id || '1',
@@ -42,6 +42,7 @@ export default function Dashboard() {
       status: 'active'
     };
     setApiKey(newKey);
+    updateApiKey(newKey.key);
     setIsRegenerating(false);
     setShowKey(true);
   };

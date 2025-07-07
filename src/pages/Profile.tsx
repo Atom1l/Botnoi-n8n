@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { User, Mail, Calendar, Shield, Edit2, Save, X } from 'lucide-react';
+import { User, Mail, Calendar, Shield, Edit2, Save, X, Copy } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 export default function Profile() {
@@ -9,12 +9,24 @@ export default function Profile() {
   const { language, t } = useLanguage();
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(user?.name || '');
+  const [copiedUserId, setCopiedUserId] = useState(false);
+  const [copiedApiKey, setCopiedApiKey] = useState(false);
 
   const handleSave = () => {
     // In a real app, you'd update the user data here
     setIsEditing(false);
   };
 
+  const copyToClipboard = (text: string, type: 'userId' | 'apiKey') => {
+    navigator.clipboard.writeText(text);
+    if (type === 'userId') {
+      setCopiedUserId(true);
+      setTimeout(() => setCopiedUserId(false), 2000);
+    } else {
+      setCopiedApiKey(true);
+      setTimeout(() => setCopiedApiKey(false), 2000);
+    }
+  };
   const getProviderIcon = (provider: string) => {
     switch (provider) {
       case 'google':
@@ -121,6 +133,15 @@ export default function Profile() {
                   <p className="text-sm text-gray-600 font-mono">{user?.userId}</p>
                 </div>
               </div>
+              <button
+                onClick={() => copyToClipboard(user?.userId || '', 'userId')}
+                className={`flex items-center space-x-1 text-gray-400 hover:text-blue-600 transition-colors ${
+                  copiedUserId ? 'text-green-600' : ''
+                }`}
+              >
+                <Copy className="h-4 w-4" />
+                <span className="text-xs">{copiedUserId ? 'Copied!' : 'Copy'}</span>
+              </button>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">
@@ -132,7 +153,18 @@ export default function Profile() {
                   </p>
                 </div>
               </div>
-              <span className={`text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</span>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => copyToClipboard(user?.apiKey || '', 'apiKey')}
+                  className={`flex items-center space-x-1 text-gray-400 hover:text-blue-600 transition-colors ${
+                    copiedApiKey ? 'text-green-600' : ''
+                  }`}
+                >
+                  <Copy className="h-4 w-4" />
+                  <span className="text-xs">{copiedApiKey ? 'Copied!' : 'Copy'}</span>
+                </button>
+                <span className={`text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</span>
+              </div>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">

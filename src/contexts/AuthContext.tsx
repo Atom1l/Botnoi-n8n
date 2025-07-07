@@ -17,6 +17,7 @@ interface AuthContextType {
   loginWithLine: () => Promise<void>;
   logout: () => void;
   loading: boolean;
+  updateApiKey: (newApiKey: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -112,13 +113,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.removeItem('user');
   };
 
+  const updateApiKey = (newApiKey: string) => {
+    if (user) {
+      const updatedUser = { ...user, apiKey: newApiKey };
+      setUser(updatedUser);
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+    }
+  };
   const value = {
     user,
     login,
     loginWithGoogle,
     loginWithLine,
     logout,
-    loading
+    loading,
+    updateApiKey
   };
 
   return (
