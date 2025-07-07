@@ -73,15 +73,7 @@ export default function Profile() {
                 {getProviderIcon(user?.provider || 'email')}
               </div>
             </div>
-            <div className="flex-1">
-              <div className="flex items-center space-x-2 mb-2">
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={editedName}
-                    onChange={(e) => setEditedName(e.target.value)}
-                    className={`text-2xl font-bold text-gray-900 bg-transparent border-b-2 border-blue-600 focus:outline-none ${language === 'th' ? 'font-thai' : 'font-en'}`}
-                  />
+
                 ) : (
                   <h1 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
                 )}
