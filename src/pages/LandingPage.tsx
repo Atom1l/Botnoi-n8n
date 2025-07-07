@@ -35,8 +35,7 @@ export default function LandingPage() {
             BOTNOi
           </h1>
           <p className="font-en text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Generate, manage, and secure your API keys with enterprise-grade security. 
-            Perfect for n8n workflows and automation.
+            Easily turn any text into realistic speech.
           </p>
           <button
             onClick={() => setShowLogin(true)}
