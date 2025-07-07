@@ -29,8 +29,8 @@ export default function LandingPage() {
           <img 
               src="/botnoi.svg" 
               alt="Botnoi" 
-              className="h-16 w-16"
-            />
+              className="h-25 w-25"
+          />
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Botnoivoice x n8n
           </h1>
