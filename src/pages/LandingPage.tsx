@@ -35,7 +35,7 @@ export default function LandingPage() {
             BOTNOi
           </h1>
           <p className="font-en text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Easily convert any text into realistic speech, helping you work smoothly,<br></br> finish tasks easily, and do it anywhere.
+            Easily convert any text into realistic speech,<br></br>  helping you work smoothly,<br></br> finish tasks easily, and do it anywhere.
           </p>
           <button
             onClick={() => setShowLogin(true)}
