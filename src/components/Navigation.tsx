@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { User, LogOut, Book, ChevronDown, Globe } from 'lucide-react';
+import { User, LogOut, Book, ChevronDown } from 'lucide-react';
+import LanguageDropdown from './LanguageDropdown';
 
 interface NavigationProps {
   showDocs?: boolean;
@@ -11,21 +12,16 @@ interface NavigationProps {
 
 export default function Navigation({ showDocs = false, onLoginClick }: NavigationProps) {
   const { user, logout } = useAuth();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const languageDropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
-      }
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target as Node)) {
-        setIsLanguageDropdownOpen(false);
       }
     }
 
@@ -43,11 +39,6 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   const handleLogout = () => {
     logout();
     setIsDropdownOpen(false);
-  };
-
-  const handleLanguageChange = (lang: 'en' | 'th') => {
-    setLanguage(lang);
-    setIsLanguageDropdownOpen(false);
   };
 
   const handleLogoClick = () => {
@@ -86,42 +77,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
               )}
               
               {/* Language Dropdown */}
-              <div className="relative" ref={languageDropdownRef}>
-                <button
-                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
-                >
-                  <Globe className="h-5 w-5" />
-                  <span className="text-sm font-medium">
-                    {language === 'en' ? 'EN' : 'TH'}
-                  </span>
-                  <ChevronDown className={`h-4 w-4 transition-transform ${isLanguageDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {/* Language Dropdown Menu */}
-                {isLanguageDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
-                    <button
-                      onClick={() => handleLanguageChange('en')}
-                      className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
-                        language === 'en' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
-                      }`}
-                    >
-                      <span className="font-en">🇺🇸</span>
-                      <span className="font-en">{t('language.english')}</span>
-                    </button>
-                    <button
-                      onClick={() => handleLanguageChange('th')}
-                      className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
-                        language === 'th' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
-                      }`}
-                    >
-                      <span className="font-thai">🇹🇭</span>
-                      <span className="font-thai">{t('language.thai')}</span>
-                    </button>
-                  </div>
-                )}
-              </div>
+              <LanguageDropdown />
               
               {/* Profile Dropdown */}
               <div className="relative" ref={dropdownRef}>
@@ -174,42 +130,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
       
             <div className="flex items-center space-x-4">
               {/* Language Dropdown */}
-              <div className="relative" ref={languageDropdownRef}>
-                <button
-                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
-                >
-                  <Globe className="h-5 w-5" />
-                  <span className="text-sm font-medium">
-                    {language === 'en' ? 'EN' : 'TH'}
-                  </span>
-                  <ChevronDown className={`h-4 w-4 transition-transform ${isLanguageDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {/* Language Dropdown Menu */}
-                {isLanguageDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
-                    <button
-                      onClick={() => handleLanguageChange('en')}
-                      className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
-                        language === 'en' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
-                      }`}
-                    >
-                      <span className="font-en">🇺🇸</span>
-                      <span className="font-en">{t('language.english')}</span>
-                    </button>
-                    <button
-                      onClick={() => handleLanguageChange('th')}
-                      className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
-                        language === 'th' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
-                      }`}
-                    >
-                      <span className="font-thai">🇹🇭</span>
-                      <span className="font-thai">{t('language.thai')}</span>
-                    </button>
-                  </div>
-                )}
-              </div>
+              <LanguageDropdown />
               <button
                 onClick={onLoginClick}
                 className={`bg-[#01bffb] text-white px-6 py-2 rounded-lg hover:bg-[#05aee3] transition-colors font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
