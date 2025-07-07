@@ -53,21 +53,21 @@ export default function LandingPage() {
               <Key className="h-8 w-8 text-blue-600" />
             </div>
             <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Log In</h3>
-            <p className="font-en text-gray-600">Generate secure API keys instantly with customizable permissions and expiration dates.</p>
+            <p className="font-en text-gray-600">Log In with a simple click!</p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Zap className="h-8 w-8 text-green-600" /> 
             </div>
             <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Get API Key</h3>
-            <p className="font-en text-gray-600">Seamlessly integrate with n8n workflows using our comprehensive API documentation.</p>
+            <p className="font-en text-gray-600">Get API Key and go to our website.</p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Shield className="h-8 w-8 text-purple-600" />
             </div>
             <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Try it</h3>
-            <p className="font-en text-gray-600">Bank-grade encryption and security measures to protect your API keys and data.</p>
+            <p className="font-en text-gray-600">Try your Botnoivoice Text-to-Speech!</p>
           </div>
         </div>
       </main>
