@@ -135,40 +135,6 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Security Settings */}
-        <div className="bg-white rounded-xl shadow-sm p-6">
-          <h2 className={`text-lg font-semibold text-gray-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.securitySettings')}</h2>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div>
-                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.twoFactor')}</p>
-                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.twoFactorDesc')}</p>
-              </div>
-              <button className={`text-blue-600 hover:text-blue-700 font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                {t('profile.enable')}
-              </button>
-            </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div>
-                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.password')}</p>
-                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.changePassword')}</p>
-              </div>
-              <button className={`text-blue-600 hover:text-blue-700 font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                {t('profile.change')}
-              </button>
-            </div>
-            <div className="flex items-center justify-between py-3">
-              <div>
-                <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.activeSessions')}</p>
-                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.activeSessionsDesc')}</p>
-              </div>
-              <button className={`text-blue-600 hover:text-blue-700 font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                {t('profile.view')}
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   );
