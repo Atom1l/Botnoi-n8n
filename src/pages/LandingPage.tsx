@@ -27,7 +27,7 @@ export default function LandingPage() {
       <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5.10rem)] px-4 sm:px-6 lg:px-8 border ">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8 border ">
         <div className="text-center mt-10 mb-16 max-w-4xl">
           <img 
               src="/botnoi.svg" 
