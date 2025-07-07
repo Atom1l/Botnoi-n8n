@@ -23,11 +23,12 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
-      <Navigation />
+    <div className="min-h-screen bg-white">
+      
       
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
+        <Navigation />
         <div className="text-center mb-16 max-w-4xl">
           <img 
               src="/botnoi.svg" 
