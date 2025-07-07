@@ -118,7 +118,7 @@ export default function Profile() {
                 <Calendar className="h-5 w-5 text-gray-400" />
                 <div>
                   <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountCreated')}</p>
-                  <p className="text-sm text-gray-600">January 15, 2024</p>
+                  <p className="text-sm text-gray-600">01234567890</p>
                 </div>
               </div>
             </div>
