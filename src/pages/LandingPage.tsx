@@ -48,6 +48,31 @@ export default function LandingPage() {
             <ArrowRight className="ml-2 h-5 w-5 inline" />
           </button>
         </div>
+        
+        {/* Features */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl">
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
+            <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Key className="h-8 w-8 text-blue-600" />
+            </div>
+            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Log In</h3>
+            <p className="font-en text-gray-600">Log In with a simple click!</p>
+          </div>
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
+            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Zap className="h-8 w-8 text-green-600" /> 
+            </div>
+            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Get API Key</h3>
+            <p className="font-en text-gray-600">Get API Key and <br></br> go to our website.</p>
+          </div>
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
+            <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Shield className="h-8 w-8 text-purple-600" />
+            </div>
+            <h3 className="font-en text-xl font-semibold text-gray-900 mb-2">Try it</h3>
+            <p className="font-en text-gray-600">Try your Botnoivoice <br></br> Text-to-Speech!</p>
+          </div>
+        </div>
 
       </main>
 
