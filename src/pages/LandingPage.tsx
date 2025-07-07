@@ -24,7 +24,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
-      <Navigation />
+      <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] px-4 sm:px-6 lg:px-8">
