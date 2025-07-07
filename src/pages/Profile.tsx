@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { User, Mail, Calendar, Shield, Edit2, Save, X, Copy } from 'lucide-react';
+import { User, Mail, Calendar, Shield, Copy } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 export default function Profile() {
   const { user } = useAuth();
   const { language, t } = useLanguage();
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedName, setEditedName] = useState(user?.name || '');
   const [copiedUserId, setCopiedUserId] = useState(false);
   const [copiedApiKey, setCopiedApiKey] = useState(false);
-
-  const handleSave = () => {
-    // In a real app, you'd update the user data here
-    setIsEditing(false);
-  };
 
   const copyToClipboard = (text: string, type: 'userId' | 'apiKey') => {
     navigator.clipboard.writeText(text);
@@ -75,33 +68,7 @@ export default function Profile() {
             </div>
             <div className="flex-1">
               <div className="flex items-center space-x-2 mb-2">
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={editedName}
-                    onChange={(e) => setEditedName(e.target.value)}
-                    className={`text-2xl font-bold text-gray-900 bg-transparent border-b-2 border-blue-600 focus:outline-none ${language === 'th' ? 'font-thai' : 'font-en'}`} 
-                  />
-                ) : (
-                  <h1 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
-                )}
-                <button
-                  onClick={() => isEditing ? handleSave() : setIsEditing(true)}
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
-                >
-                  {isEditing ? <Save className="h-5 w-5" /> : <Edit2 className="h-5 w-5" />}
-                </button>
-                {isEditing && (
-                  <button
-                    onClick={() => {
-                      setIsEditing(false);
-                      setEditedName(user?.name || '');
-                    }}
-                    className="text-gray-400 hover:text-red-600 transition-colors"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                )}
+                <h1 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
               </div>
               <p className="text-gray-600 flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
