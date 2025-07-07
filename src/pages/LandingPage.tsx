@@ -32,7 +32,7 @@ export default function LandingPage() {
               className="h-32 w-32 mb-5 pb-2 mx-auto border border-[3px] border-[#01bffb] rounded-full"
           />
           <h1 className="font-en text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            BOTNOi
+            BOTNOiVOiCE
           </h1>
           <p className="font-en text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Generate, manage, and secure your API keys with enterprise-grade security. 
