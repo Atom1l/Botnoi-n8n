@@ -173,6 +173,43 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
             // Not logged in navigation
       
             <div className="flex items-center space-x-4">
+              {/* Language Dropdown */}
+              <div className="relative" ref={languageDropdownRef}>
+                <button
+                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
+                >
+                  <Globe className="h-5 w-5" />
+                  <span className="text-sm font-medium">
+                    {language === 'en' ? 'EN' : 'TH'}
+                  </span>
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isLanguageDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Language Dropdown Menu */}
+                {isLanguageDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                    <button
+                      onClick={() => handleLanguageChange('en')}
+                      className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
+                        language === 'en' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                      }`}
+                    >
+                      <span className="font-en">🇺🇸</span>
+                      <span className="font-en">{t('language.english')}</span>
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange('th')}
+                      className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
+                        language === 'th' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                      }`}
+                    >
+                      <span className="font-thai">🇹🇭</span>
+                      <span className="font-thai">{t('language.thai')}</span>
+                    </button>
+                  </div>
+                )}
+              </div>
               <button
                 onClick={onLoginClick}
                 className={`bg-[#01bffb] text-white px-6 py-2 rounded-lg hover:bg-[#05aee3] transition-colors font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
