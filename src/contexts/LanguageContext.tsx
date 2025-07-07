@@ -77,20 +77,7 @@ const translations = {
     'profile.verified': 'Verified',
     'profile.uid': 'UserId',
     'profile.authMethod': 'Authentication Method',
-    'profile.signIn': 'Sign-in',
-    'profile.securitySettings': 'Security Settings',
-    'profile.twoFactor': 'Two-Factor Authentication',
-    'profile.twoFactorDesc': 'Add an extra layer of security to your account',
-    'profile.enable': 'Enable',
-    'profile.password': 'Password',
-    'profile.changePassword': 'Change your account password',
-    'profile.change': 'Change',
-    'profile.activeSessions': 'Active Sessions',
-    'profile.activeSessionsDesc': 'Manage your active sessions',
-    'profile.view': 'View',
-    'profile.dangerZone': 'Danger Zone',
-    'profile.deleteAccount': 'Delete Account',
-    'profile.deleteAccountDesc': 'Permanently delete your account and all associated data',
+
     
     // Language
     'language.english': 'English',
