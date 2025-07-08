@@ -125,9 +125,6 @@ export default function Profile() {
                     </p>
                   </div>
                 </div>
-                <span className={`text-xs sm:text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full font-medium self-start sm:self-auto flex-shrink-0 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                  {t('profile.verified')}
-                </span>
               </div>
               
               {/* User ID */}
