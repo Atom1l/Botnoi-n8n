@@ -44,7 +44,7 @@ export default function LanguageDropdown() {
         <div className="absolute right-0 mt-2 w-32 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/30 py-2 z-[9999]">
           <button
             onClick={() => handleLanguageChange('en')}
-            className={`flex items-center space-x-2 w-full px-4 py-3  text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1 ${
+            className={`flex items-center space-x-2 w-full px-2 py-3 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1 ${
               language === 'en' ? 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600' : 'text-gray-700'
             }`}
           >
