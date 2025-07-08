@@ -58,7 +58,7 @@ export default function LandingPage() {
           </div> 
 
           {/* Enhanced CTA button */}
-          <div className="relative inline-block mb-8 sm:mb-12">
+          <div className="relative inline-block mb-8 sm:mb-12 border border-red-200">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg sm:rounded-xl blur-lg opacity-75 transform scale-105"></div>
             <button
               onClick={handleGetStarted}
