@@ -48,15 +48,15 @@ export default function LandingPage() {
         </div>
         
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
               <LogIn className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}"
+            <h3 className={`text-xl font-semibold text-gray-900 mb-2 min-h-[3.5rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}
               dangerouslySetInnerHTML={{ __html: t('landing.login') }}>
             </h3>
-            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}"
+            <p className={`text-gray-600 min-h-[3rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}
               dangerouslySetInnerHTML={{ __html: t('landing.logindetails') }}>
             </p>
           </div>
@@ -64,22 +64,20 @@ export default function LandingPage() {
             <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
               <Key className="h-8 w-8 text-green-600" /> 
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}">
+            <h3 className={`text-xl font-semibold text-gray-900 mb-2 min-h-[3.5rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}>
               {t('landing.getapikey')}
             </h3>
-            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}" dangerouslySetInnerHTML={{ __html: t('landing.getapikeydetails') }}>
+            <p className={`text-gray-600 min-h-[3rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`} dangerouslySetInnerHTML={{ __html: t('landing.getapikeydetails') }}>
             </p>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/80 transition-all duration-300">
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-all duration-300">
               <AudioLines className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}">
+            <h3 className={`text-xl font-semibold text-gray-900 mb-2 min-h-[3.5rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}>
               {t('landing.tryit')}
             </h3>
-            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}">
-            </p>
-            <p className="text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}" 
+            <p className={`text-gray-600 min-h-[3rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`} 
               dangerouslySetInnerHTML={{ __html: t('landing.tryitdetails') }}>
             </p>
           </div>
