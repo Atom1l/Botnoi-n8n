@@ -68,7 +68,7 @@ export default function Profile() {
               <div className="relative flex-shrink-0">
                 {user?.avatar ? (
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-50 hidden sm:block"></div>
+                    <div className="absolute inset-0  opacity-50 hidden sm:block"></div>
                     <img
                       src={user.avatar}
                       alt={user.name}
