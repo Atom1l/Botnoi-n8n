@@ -101,9 +101,7 @@ export default function Profile() {
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-2xl sm:rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300 hidden sm:block"></div>
           <div className="relative bg-white/80 rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 p-4 sm:p-6 lg:p-8">
             <div className="flex items-center justify-center sm:justify-start space-x-3 mb-4 sm:mb-6">
-              <div className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl p-2 sm:p-3">
-                <User className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              </div>
+              
               <h2 className={`text-xl sm:text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                 {t('profile.accountInfo')}
               </h2>
