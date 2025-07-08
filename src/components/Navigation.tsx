@@ -45,7 +45,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   const handleLogoClick = () => {
     if (user) {
       navigate('/dashboard');
-    } else{
+    } else {
       navigate('/');
     }
   };
@@ -56,8 +56,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
         <div className="flex justify-between items-center h-20">
           <button 
             onClick={handleLogoClick}
-            className={`flex items-center space-x-3 ${user ? 'cursor-pointer hover:opacity-80 transition-opacity' : 'cursor-default'}`}
-            disabled={!user}
+            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
           >
             <img 
               src="/botnoi_voice.svg" 
