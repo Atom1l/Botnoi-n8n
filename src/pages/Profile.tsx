@@ -80,9 +80,7 @@ export default function Profile() {
                     <User className="h-10 w-10 sm:h-12 sm:w-12 text-white" />
                   </div>
                 )}
-                <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 bg-white rounded-full p-2 sm:p-3 shadow-xl border-2 border-gray-100">
-                  {getProviderIcon(user?.provider || 'email')}
-                </div>
+
               </div>
               <div className="flex-1 text-center sm:text-left min-w-0">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 mb-2 sm:mb-3">
