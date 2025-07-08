@@ -21,7 +21,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen md:h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative">
+    <div className="min-h-screen md:h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-md-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
@@ -73,7 +73,7 @@ export default function LandingPage() {
         </div>
         
         {/* Enhanced Features Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 max-w-5xl w-full border border-red">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 max-w-5xl w-full mt-4">
           {/* Card 1 - Login */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl md:rounded-2xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
