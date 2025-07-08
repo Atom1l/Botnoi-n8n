@@ -61,7 +61,7 @@ export default function Profile() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Profile Header */}
-        <div className="relative group sm:mt-16 mt-5 mb-6 sm:mb-8">
+        <div className="relative group sm:mt-16 mt-6 mb-6 sm:mb-8">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl sm:rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300 hidden sm:block"></div>
           <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 p-4 sm:p-6 lg:p-8">
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
