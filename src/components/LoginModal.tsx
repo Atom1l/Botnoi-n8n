@@ -44,7 +44,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
       <div className="relative w-full max-w-sm sm:max-w-md mx-auto max-h-[95vh] overflow-y-auto">
         {/* Modal Container */}
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl sm:rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300 hidden sm:block"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl sm:rounded-3xl blur-xl  hidden sm:block"></div>
           <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden">
             
             {/* Close Button */}
