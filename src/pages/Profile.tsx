@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { User, Mail, Calendar, Shield, Copy } from 'lucide-react';
+import { User, Mail, Calendar, Shield, Copy, Sparkles } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 export default function Profile() {
@@ -20,6 +20,7 @@ export default function Profile() {
       setTimeout(() => setCopiedApiKey(false), 2000);
     }
   };
+  
   const getProviderIcon = (provider: string) => {
     switch (provider) {
       case 'google':
@@ -43,108 +44,140 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-indigo-400/10 to-purple-600/10 rounded-full blur-3xl"></div>
+      </div>
+
       <Navigation />
 
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Profile Header */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
-          <div className="flex items-center space-x-6">
-            <div className="relative">
-              {user?.avatar ? (
-                <img
-                  src={user.avatar}
-                  alt={user.name}
-                  className="w-20 h-20 rounded-full object-cover"
-                />
-              ) : (
-                <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center">
-                  <User className="h-10 w-10 text-blue-600" />
+        <div className="relative group mb-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
+          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-8">
+            <div className="flex items-center space-x-6">
+              <div className="relative">
+                {user?.avatar ? (
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-50"></div>
+                    <img
+                      src={user.avatar}
+                      alt={user.name}
+                      className="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-2xl"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-2xl border-4 border-white">
+                    <User className="h-12 w-12 text-white" />
+                  </div>
+                )}
+                <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-3 shadow-xl border-2 border-gray-100">
+                  {getProviderIcon(user?.provider || 'email')}
                 </div>
-              )}
-              <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-lg">
-                {getProviderIcon(user?.provider || 'email')}
               </div>
-            </div>
-            <div className="flex-1">
-              <div className="flex items-center space-x-2 mb-2">
-                <h1 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
+              <div className="flex-1">
+                <div className="flex items-center space-x-3 mb-3">
+                  <h1 className={`text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-800 bg-clip-text text-transparent ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-full p-1">
+                    <Sparkles className="h-4 w-4 text-white" />
+                  </div>
+                </div>
+                <p className="text-gray-600 flex items-center space-x-2 text-lg">
+                  <Mail className="h-5 w-5" />
+                  <span>{user?.email}</span>
+                </p>
               </div>
-              <p className="text-gray-600 flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
-                <span>{user?.email}</span>
-              </p>
             </div>
           </div>
         </div>
 
         {/* Account Information */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
-          <h2 className={`text-lg font-semibold text-gray-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountInfo')}</h2>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-gray-400" />
-                <div>
-                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.emailAddress')}</p>
-                  <p className="text-sm text-gray-600">{user?.email}</p>
-                </div>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
+          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-8">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl p-3">
+                <User className="h-6 w-6 text-white" />
               </div>
-              <span className={`text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.verified')}</span>
+              <h2 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountInfo')}</h2>
             </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center space-x-3">
-                <User className="h-5 w-5 text-gray-400" />
-                <div>
-                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.uid')}</p>
-                  <p className="text-sm text-gray-600 font-mono">{user?.userId}</p>
+            <div className="space-y-6">
+              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-2xl border border-blue-200/50">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-2">
+                    <Mail className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.emailAddress')}</p>
+                    <p className="text-gray-600">{user?.email}</p>
+                  </div>
                 </div>
+                <span className={`text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.verified')}</span>
               </div>
-              <button
-                onClick={() => copyToClipboard(user?.userId || '', 'userId')}
-                className={`flex items-center space-x-1 text-gray-400 hover:text-blue-600 transition-colors ${
-                  copiedUserId ? 'text-green-600' : ''
-                }`}
-              >
-                <Copy className="h-4 w-4" />
-                <span className="text-xs">{copiedUserId ? 'Copied!' : 'Copy'}</span>
-              </button>
-            </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center space-x-3">
-                <Shield className="h-5 w-5 text-gray-400" />
-                <div>
-                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.apitoken')}</p>
-                  <p className="text-sm text-gray-600 font-mono">
-                    {user?.apiKey ? user.apiKey.substring(0, 8) + '•'.repeat(20) + user.apiKey.substring(user.apiKey.length - 4) : 'ไม่มี API Key'}
-                  </p>
+              
+              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-green-50/50 to-emerald-50/50 rounded-2xl border border-green-200/50">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl p-2">
+                    <User className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.uid')}</p>
+                    <p className="text-gray-600 font-mono text-sm">{user?.userId}</p>
+                  </div>
                 </div>
+                <button
+                  onClick={() => copyToClipboard(user?.userId || '', 'userId')}
+                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 ${
+                    copiedUserId ? 'text-green-600' : ''
+                  }`}
+                >
+                  <Copy className="h-4 w-4" />
+                  <span className="text-xs font-medium">{copiedUserId ? 'Copied!' : 'Copy'}</span>
+                </button>
               </div>
-              <div className="flex items-center space-x-2">
+              
+              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-2xl border border-purple-200/50">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-2">
+                    <Shield className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.apitoken')}</p>
+                    <p className="text-gray-600 font-mono text-sm">
+                      {user?.apiKey ? user.apiKey.substring(0, 8) + '•'.repeat(20) + user.apiKey.substring(user.apiKey.length - 4) : 'ไม่มี API Key'}
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => copyToClipboard(user?.apiKey || '', 'apiKey')}
-                  className={`flex items-center space-x-1 text-gray-400 hover:text-blue-600 transition-colors ${
+                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 ${
                     copiedApiKey ? 'text-green-600' : ''
                   }`}
                 >
                   <Copy className="h-4 w-4" />
-                  <span className="text-xs">{copiedApiKey ? 'Copied!' : 'Copy'}</span>
+                  <span className="text-xs font-medium">{copiedApiKey ? 'Copied!' : 'Copy'}</span>
                 </button>
               </div>
-            </div>
-            <div className="flex items-center justify-between py-3">
-              <div className="flex items-center space-x-3">
-                <Shield className="h-5 w-5 text-gray-400" />
-                <div>
-                  <p className={`font-medium text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.authMethod')}</p>
-                  <p className={`text-sm text-gray-600 capitalize ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.provider} {t('profile.signIn')}</p>
+              
+              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-yellow-50/50 to-orange-50/50 rounded-2xl border border-yellow-200/50">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl p-2">
+                    <Shield className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.authMethod')}</p>
+                    <p className={`text-gray-600 capitalize ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.provider} {t('profile.signIn')}</p>
+                  </div>
                 </div>
+                <span className={`text-sm text-blue-600 bg-blue-100 px-3 py-1 rounded-full font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>Active</span>
               </div>
-              <span className={`text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
