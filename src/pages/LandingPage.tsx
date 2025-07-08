@@ -73,7 +73,7 @@ export default function LandingPage() {
         </div>
         
         {/* Enhanced Features Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl w-full px-2 sm:px-0">
+        <div className="mt-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl w-full px-2 sm:px-0">
           {/* Card 1 - Login */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl sm:rounded-2xl blur-lg sm:blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
