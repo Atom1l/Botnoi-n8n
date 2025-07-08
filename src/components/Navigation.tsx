@@ -142,7 +142,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
               {/* Language Dropdown */}
               <LanguageDropdown />
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg opacity-75"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-75"></div>
                 <button
                   onClick={onLoginClick}
                   className={`relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium transform hover:scale-105 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
