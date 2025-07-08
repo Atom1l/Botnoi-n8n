@@ -30,7 +30,7 @@ export default function LanguageDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 focus:outline-none px-4 py-2 rounded-lg hover:bg-white/50"
+        className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
       >
         <Globe className="h-5 w-5" />
         <span className="text-sm font-medium">
@@ -41,11 +41,11 @@ export default function LanguageDropdown() {
 
       {/* Language Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/30 py-2 z-[9999]">
+        <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
           <button
             onClick={() => handleLanguageChange('en')}
-            className={`flex items-center space-x-2 w-full px-2  py-3 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1 ${
-              language === 'en' ? 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600' : 'text-gray-700'
+            className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
+              language === 'en' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
             }`}
           >
             <span className="font-en">🇺🇸</span>
@@ -53,8 +53,8 @@ export default function LanguageDropdown() {
           </button>
           <button
             onClick={() => handleLanguageChange('th')}
-            className={`flex items-center space-x-2 w-full px-4 py-3 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1 ${
-              language === 'th' ? 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600' : 'text-gray-700'
+            className={`flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
+              language === 'th' ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
             }`}
           >
             <span className="font-thai">🇹🇭</span>
