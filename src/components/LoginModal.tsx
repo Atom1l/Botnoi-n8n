@@ -188,7 +188,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
                   {/* Submit Button */}
                   <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-300 hidden sm:block"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-md opacity-75 group-hover:opacity-100 transition-all duration-300 hidden sm:block"></div>
                     <button
                       type="submit"
                       disabled={loading}
