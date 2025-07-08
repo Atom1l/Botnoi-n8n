@@ -128,13 +128,6 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-
-        {/* Bottom decorative element - Hidden on mobile to save space */}
-        <div className="mt-8 md:mt-8 lg:mt-12 flex items-center justify-center space-x-2 opacity-60">
-          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-          <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-        </div>
       </main>
 
       <LoginModal isOpen={showLogin} onClose={() => setShowLogin(false)} />
