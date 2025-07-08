@@ -3,6 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Copy, Eye, EyeOff, RefreshCw, Code, CheckCircle, ExternalLink, Settings, Zap, Book, Key } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import LoginModal from '../components/LoginModal';
 
 interface ApiKey {
   id: string;
@@ -16,6 +17,7 @@ interface ApiKey {
 export default function Dashboard() {
   const { user, updateApiKey } = useAuth();
   const { language, t } = useLanguage();
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [apiKey, setApiKey] = useState<ApiKey>(() => ({
     id: user?.id || '1',
     key: user?.apiKey || 'ak_live_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
@@ -29,6 +31,11 @@ export default function Dashboard() {
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const regenerateApiKey = async () => {
+    if (!user) {
+      setShowLoginModal(true);
+      return;
+    }
+
     setIsRegenerating(true);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -48,6 +55,10 @@ export default function Dashboard() {
   };
 
   const copyToClipboard = (text: string) => {
+    if (!user) {
+      setShowLoginModal(true);
+      return;
+    }
     navigator.clipboard.writeText(text);
   };
 
@@ -61,12 +72,20 @@ export default function Dashboard() {
     return key.substring(0, 8) + '•'.repeat(20) + key.substring(key.length - 4);
   };
 
+  const handleShowKey = () => {
+    if (!user) {
+      setShowLoginModal(true);
+      return;
+    }
+    setShowKey(!showKey);
+  };
+
   const codeExamples = {
     httpRequest: `{
   "method": "GET",
   "url": "https://voice.botnoi.ai/tts/api-developer-v2/voices",
   "headers": {
-    "Authorization": "Bearer ${apiKey.key}",
+    "Authorization": "Bearer ${user ? apiKey.key : 'YOUR_API_KEY'}",
     "Content-Type": "application/json"
   }
 }`,
@@ -75,7 +94,7 @@ export default function Dashboard() {
   "url": "https://voice.botnoi.ai/tts/api-developer-v2/synthesize",
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer ${apiKey.key}",
+    "Authorization": "Bearer ${user ? apiKey.key : 'YOUR_API_KEY'}",
     "Content-Type": "application/json"
   },
   "body": {
@@ -95,7 +114,7 @@ export default function Dashboard() {
         "url": "https://voice.botnoi.ai/tts/api-developer-v2/synthesize",
         "method": "POST",
         "headers": {
-          "Authorization": "Bearer ${apiKey.key}"
+          "Authorization": "Bearer ${user ? apiKey.key : 'YOUR_API_KEY'}"
         },
         "body": {
           "text": "Hello World",
@@ -109,15 +128,17 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation />
+      <Navigation onLoginClick={() => setShowLoginModal(true)} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className={`text-3xl font-bold text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-            {t('dashboard.welcomeBack')}, {user?.name}!
+            {user ? `${t('dashboard.welcomeBack')}, ${user.name}!` : 'Voice API Dashboard'}
           </h1>
-          <p className={`text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.subtitle')}</p>
+          <p className={`text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+            {user ? t('dashboard.subtitle') : 'Explore our Voice API features and get started with text-to-speech integration'}
+          </p>
         </div>
 
         {/* Stats */}
@@ -126,7 +147,7 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.totalRequests')}</p>
-                <p className="text-2xl font-bold text-gray-900">{apiKey.requests.toLocaleString()}</p>
+                <p className="text-2xl font-bold text-gray-900">{user ? apiKey.requests.toLocaleString() : '---'}</p>
               </div>
               <div className="bg-green-100 rounded-full p-3">
                 <Zap className="h-6 w-6 text-green-600" />
@@ -137,7 +158,9 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.status')}</p>
-                <p className={`text-2xl font-bold text-green-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.active')}</p>
+                <p className={`text-2xl font-bold ${user ? 'text-green-600' : 'text-gray-400'} ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                  {user ? t('dashboard.active') : 'Not Connected'}
+                </p>
               </div>
               <div className="bg-blue-100 rounded-full p-3">
                 <Key className="h-6 w-6 text-blue-600" />
@@ -149,7 +172,7 @@ export default function Dashboard() {
               <div>
                 <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.lastUsed')}</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : t('dashboard.never')}
+                  {user && apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : '---'}
                 </p>
               </div>
               <div className="bg-purple-100 rounded-full p-3">
@@ -176,36 +199,46 @@ export default function Dashboard() {
           </div>
 
           <div className="p-6">
+            {!user && (
+              <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className={`text-blue-800 text-sm ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                  <strong>Note:</strong> Please log in to generate and manage your API key. You can explore the documentation and examples below without logging in.
+                </p>
+              </div>
+            )}
+            
             <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
               <div className="flex items-center space-x-3 mb-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                  {apiKey.status}
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${user ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'} ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                  {user ? apiKey.status : 'inactive'}
                 </span>
               </div>
               <div className="flex items-center space-x-2 mb-4">
                 <code className="bg-white px-4 py-3 rounded-lg text-sm font-mono flex-1 border">
-                  {showKey ? apiKey.key : maskKey(apiKey.key)}
+                  {user ? (showKey ? apiKey.key : maskKey(apiKey.key)) : '••••••••••••••••••••••••••••••••••••••••'}
                 </code>
                 <button
-                  onClick={() => setShowKey(!showKey)}
+                  onClick={handleShowKey}
                   className="text-gray-400 hover:text-gray-600 p-2"
                 >
                   {showKey ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
                 <button
-                  onClick={() => copyToClipboard(apiKey.key)}
+                  onClick={() => copyToClipboard(user ? apiKey.key : '')}
                   className="text-gray-400 hover:text-gray-600 p-2"
                 >
                   <Copy className="h-5 w-5" />
                 </button>
               </div>
-              <div className={`flex items-center space-x-4 text-sm text-gray-500 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                <span>{t('dashboard.created')}: {apiKey.created.toLocaleDateString()}</span>
-                <span>{t('dashboard.requests')}: {apiKey.requests.toLocaleString()}</span>
-                <span>
-                  {t('dashboard.lastUsed')}: {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : t('dashboard.never')}
-                </span>
-              </div>
+              {user && (
+                <div className={`flex items-center space-x-4 text-sm text-gray-500 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                  <span>{t('dashboard.created')}: {apiKey.created.toLocaleDateString()}</span>
+                  <span>{t('dashboard.requests')}: {apiKey.requests.toLocaleString()}</span>
+                  <span>
+                    {t('dashboard.lastUsed')}: {apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : t('dashboard.never')}
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="mt-4 p-4 bg-yellow-50 rounded-lg">
@@ -246,7 +279,49 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
+
+        {/* Code Examples */}
+        <div className="bg-white rounded-xl shadow-sm p-6">
+          <h2 className={`text-lg font-semibold text-gray-900 mb-4 ${language === 'th' ? 'font-thai' : 'font-en'}`}>Code Examples</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className={`text-md font-medium text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}>HTTP Request Example</h3>
+              <div className="relative">
+                <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+                  <code>{codeExamples.httpRequest}</code>
+                </pre>
+                <button
+                  onClick={() => copyCode(codeExamples.httpRequest, 'http')}
+                  className={`absolute top-2 right-2 text-gray-400 hover:text-white p-2 ${
+                    copiedCode === 'http' ? 'text-green-400' : ''
+                  }`}
+                >
+                  <Copy className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <h3 className={`text-md font-medium text-gray-900 mb-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}>n8n Webhook Example</h3>
+              <div className="relative">
+                <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+                  <code>{codeExamples.webhook}</code>
+                </pre>
+                <button
+                  onClick={() => copyCode(codeExamples.webhook, 'webhook')}
+                  className={`absolute top-2 right-2 text-gray-400 hover:text-white p-2 ${
+                    copiedCode === 'webhook' ? 'text-green-400' : ''
+                  }`}
+                >
+                  <Copy className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <LoginModal isOpen={showLoginModal} onClose={() => setShowLoginModal(false)} />
     </div>
   );
 }
