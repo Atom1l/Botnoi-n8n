@@ -32,7 +32,7 @@ export default function LandingPage() {
       <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4.8rem)] px-4 sm:px-6 lg:px-8">
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
         <div className="text-center mt-10 mb-20 max-w-5xl">
           {/* Logo with enhanced styling */}
           <div className="relative mb-12">
