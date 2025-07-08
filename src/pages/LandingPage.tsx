@@ -33,7 +33,7 @@ export default function LandingPage() {
       
       {/* Hero Section */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
-        <div className="text-center mt-20 mb-20 max-w-5xl">
+        <div className="text-center mt-[200px] mb-20 max-w-5xl">
           {/* Logo with enhanced styling */}
           <div className="relative mb-12">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-2xl transform scale-150"></div>
