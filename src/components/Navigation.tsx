@@ -45,6 +45,8 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   const handleLogoClick = () => {
     if (user) {
       navigate('/dashboard');
+    } else{
+      navigate('/');
     }
   };
 
