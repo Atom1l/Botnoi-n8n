@@ -34,17 +34,17 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-purple-400/20 to-pink-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative w-full max-w-sm sm:max-w-md mx-auto max-h-[95vh] overflow-y-auto">
+      <div className="relative w-full max-w-[calc(100vw-1rem)] sm:max-w-md mx-auto max-h-[95vh] overflow-y-auto">
         {/* Modal Container */}
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl sm:rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
           <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden">
             
             {/* Close Button */}
@@ -62,7 +62,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
               
               {/* Logo */}
               <div className="relative mb-4 sm:mb-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-xl transform scale-150"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-lg transform scale-125 sm:scale-150"></div>
                 <div className="relative bg-white rounded-full p-3 sm:p-4 shadow-xl border-4 border-white/80 mx-auto w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
                   <img 
                     src="/botnoi.svg" 
@@ -89,11 +89,11 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 
                 {/* Google Login Button */}
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg sm:rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                   <button
                     onClick={handleGoogleLogin}
                     disabled={loading}
-                    className="relative w-full bg-white border-2 border-gray-200 text-gray-700 px-4 sm:px-6 py-3 sm:py-4 rounded-xl hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 disabled:opacity-50 transform hover:scale-[1.02] group"
+                    className="relative w-full bg-white border-2 border-gray-200 text-gray-700 px-3 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 disabled:opacity-50 transform hover:scale-[1.02] group"
                   >
                     <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24">
                       <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -109,11 +109,11 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
                 {/* Line Login Button */}
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-lg sm:rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-all duration-300"></div>
                   <button
                     onClick={handleLineLogin}
                     disabled={loading}
-                    className="relative w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 disabled:opacity-50 transform hover:scale-[1.02] shadow-lg"
+                    className="relative w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-3 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 disabled:opacity-50 transform hover:scale-[1.02] shadow-lg"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="white" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
                       <path d="M25.12,44.521c-2.114,1.162-2.024-0.549-1.933-1.076c0.054-0.314,0.3-1.787,0.3-1.787c0.07-0.534,0.144-1.36-0.067-1.887 c-0.235-0.58-1.166-0.882-1.85-1.029C11.48,37.415,4.011,30.4,4.011,22.025c0-9.342,9.42-16.943,20.995-16.943S46,12.683,46,22.025 C46,32.517,34.872,39.159,25.12,44.521z M18.369,25.845c0-0.56-0.459-1.015-1.023-1.015h-2.856v-6.678 c0-0.56-0.459-1.015-1.023-1.015c-0.565,0-1.023,0.455-1.023,1.015v7.694c0,0.561,0.459,1.016,1.023,1.016h3.879 C17.91,26.863,18.369,26.406,18.369,25.845z M21.357,18.152c0-0.56-0.459-1.015-1.023-1.015c-0.565,0-1.023,0.455-1.023,1.015 v7.694c0,0.561,0.459,1.016,1.023,1.016c0.565,0,1.023-0.456,1.023-1.016V18.152z M30.697,18.152c0-0.56-0.459-1.015-1.023-1.015 c-0.565,0-1.025,0.455-1.025,1.015v4.761l-3.978-5.369c-0.192-0.254-0.499-0.406-0.818-0.406c-0.11,0-0.219,0.016-0.325,0.052 c-0.419,0.139-0.7,0.526-0.7,0.963v7.694c0,0.561,0.46,1.016,1.025,1.016c0.566,0,1.025-0.456,1.025-1.016v-4.759l3.976,5.369 c0.192,0.254,0.498,0.406,0.818,0.406c0.109,0,0.219-0.018,0.325-0.053c0.42-0.137,0.7-0.524,0.7-0.963V18.152z M36.975,20.984 h-2.856v-1.817h2.856c0.566,0,1.025-0.455,1.025-1.015c0-0.56-0.46-1.015-1.025-1.015h-3.879c-0.565,0-1.023,0.455-1.023,1.015 c0,0.001,0,0.001,0,0.003v3.842v0.001c0,0,0,0,0,0.001v3.845c0,0.561,0.46,1.016,1.023,1.016h3.879 c0.565,0,1.025-0.456,1.025-1.016c0-0.56-0.46-1.015-1.025-1.015h-2.856v-1.817h2.856c0.566,0,1.025-0.455,1.025-1.015 c0-0.561-0.46-1.016-1.025-1.016V20.984z"></path>
