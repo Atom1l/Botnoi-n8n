@@ -53,7 +53,7 @@ export default function LanguageDropdown() {
           </button>
           <button
             onClick={() => handleLanguageChange('th')}
-            className={`flex items-center space-x-2 w-full px-4 py-3 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1 ${
+            className={`flex items-center space-x-2 w-full px-3 py-3 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1 ${
               language === 'th' ? 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600' : 'text-gray-700'
             }`}
           >
