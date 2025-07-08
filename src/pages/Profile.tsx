@@ -89,7 +89,7 @@ export default function Profile() {
                 </div>
                 <p className="text-gray-600 flex items-center justify-center sm:justify-start space-x-2 text-sm sm:text-base lg:text-lg">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                  <span className="truncate">{user?.email}</span>
+                  
                 </p>
               </div>
             </div>
