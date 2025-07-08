@@ -234,7 +234,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
                   
                   <button
                     onClick={handleLogout}
-                    className={`flex items-center space-x-3 w-full  text-left text-red-600 hover:bg-red-50 transition-colors rounded-lg ${language === 'th' ? 'font-thai' : 'font-en'}`}
+                    className={`flex items-center  w-full px-4 py-3 text-left text-red-600 hover:bg-red-50 transition-colors rounded-lg ${language === 'th' ? 'font-thai' : 'font-en'}`}
                   >
                     <LogOut className="h-5 w-5" />
                     <span>{t('nav.logout')}</span>
