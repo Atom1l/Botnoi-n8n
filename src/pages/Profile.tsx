@@ -128,7 +128,7 @@ export default function Profile() {
               </div>
               
               {/* User ID */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 sm:py-4 px-3 sm:px-4 lg:px-6 bg-gradient-to-r from-green-50/50 to-emerald-50/50 rounded-xl sm:rounded-2xl border border-green-200/50 space-y-3 sm:space-y-0">
+              <div className="flex items-center justify-between py-3 sm:py-4 px-3 sm:px-4 lg:px-6 bg-gradient-to-r from-green-50/50 to-emerald-50/50 rounded-xl sm:rounded-2xl border border-green-200/50">
                 <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
                   <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg sm:rounded-xl p-2 flex-shrink-0">
                     <User className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
@@ -137,27 +137,27 @@ export default function Profile() {
                     <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                       {t('profile.uid')}
                     </p>
-                    <p className="text-gray-600 font-mono text-xs sm:text-sm break-all">
+                    <p className="text-gray-600 font-mono text-xs sm:text-sm break-all pr-2">
                       {user?.userId}
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard(user?.userId || '', 'userId')}
-                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 self-start sm:self-auto flex-shrink-0 ${
+                  className={`flex items-center space-x-1 sm:space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-1.5 sm:p-2 rounded-lg hover:bg-white/50 flex-shrink-0 ${
                     copiedUserId ? 'text-green-600' : ''
                   }`}
                 >
                   <Copy className="h-4 w-4" />
-                  <span className="text-xs font-medium hidden sm:inline">
+                  <span className="text-xs font-medium hidden md:inline">
                     {copiedUserId ? 'Copied!' : 'Copy'}
                   </span>
                 </button>
               </div>
               
               {/* API Key */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 sm:py-4 px-3 sm:px-4 lg:px-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-xl sm:rounded-2xl border border-purple-200/50 space-y-3 sm:space-y-0">
-                <div className="flex items-start space-x-3 sm:space-x-4 min-w-0 flex-1">
+              <div className="flex items-center justify-between py-3 sm:py-4 px-3 sm:px-4 lg:px-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-xl sm:rounded-2xl border border-purple-200/50">
+                <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
                   <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg sm:rounded-xl p-2 flex-shrink-0">
                     <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
@@ -165,8 +165,8 @@ export default function Profile() {
                     <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                       {t('profile.apitoken')}
                     </p>
-                    <div className="rounded-lg">
-                      <p className="text-gray-600 font-mono text-xs sm:text-sm break-all">
+                    <div className="rounded-lg pr-2">
+                      <p className="text-gray-600 font-mono text-xs sm:text-sm break-all leading-tight">
                         {maskApiKey(user?.apiKey || '')}
                       </p>
                     </div>
@@ -174,12 +174,12 @@ export default function Profile() {
                 </div>
                 <button
                   onClick={() => copyToClipboard(user?.apiKey || '', 'apiKey')}
-                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 self-start sm:self-auto flex-shrink-0 ${
+                  className={`flex items-center space-x-1 sm:space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-1.5 sm:p-2 rounded-lg hover:bg-white/50 flex-shrink-0 ${
                     copiedApiKey ? 'text-green-600' : ''
                   }`}
                 >
                   <Copy className="h-4 w-4" />
-                  <span className="text-xs font-medium hidden sm:inline">
+                  <span className="text-xs font-medium hidden md:inline">
                     {copiedApiKey ? 'Copied!' : 'Copy'}
                   </span>
                 </button>
