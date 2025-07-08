@@ -209,16 +209,6 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                   </div>
                 </form>
               </div>
-
-              {/* Security Note */}
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200/50">
-                <div className="flex items-center space-x-2">
-                  <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-green-600 flex-shrink-0" />
-                  <p className={`text-xs sm:text-xs text-green-800 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                    Your data is protected with enterprise-grade security
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
