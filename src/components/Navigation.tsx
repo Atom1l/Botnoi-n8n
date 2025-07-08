@@ -133,14 +133,11 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
             <div className="flex items-center space-x-4">
               {/* Language Dropdown */}
               <LanguageDropdown />
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-75"></div>
-                <button
-                  onClick={onLoginClick}
-                  className={`relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium transform hover:scale-105 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                    {t('nav.signIn')}
-                </button>
-              </div>
+              <button
+                onClick={onLoginClick}
+                className={`bg-[#01bffb] text-white px-6 py-2 rounded-lg hover:bg-[#05aee3] transition-colors font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                  {t('nav.signIn')}
+              </button>
             </div>
           )}
         </div>
