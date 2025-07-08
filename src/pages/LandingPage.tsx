@@ -33,7 +33,7 @@ export default function LandingPage() {
       
       {/* Hero Section */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="text-center border border-[3px] border-red  sm:mb-12 max-w-6xl w-full">
+        <div className="text-center border border-[3px] border-red  mb-8 sm:mb-12 max-w-6xl w-full">
           {/* Logo with enhanced styling */}
           <div className="relative mb-6 sm:mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-xl sm:blur-2xl transform scale-125 sm:scale-150"></div>
