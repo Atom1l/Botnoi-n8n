@@ -21,15 +21,15 @@ export function useLanguage() {
 // Translation dictionary
 const translations = {
   en: {
-    // Navigation
+    // Navigation 
     'nav.signIn': 'Sign In',
     'nav.profile': 'Profile',
     'nav.logout': 'Logout',
     'nav.documentation': 'Documentation',
     
     // Landing Page
-    'landing.title': 'BOTNOi', 
-    'landing.subtitle': 'Easily convert any text into realistic speech, helping you work smoothly, finish tasks easily, and do it anywhere.',
+    'landing.title': 'BOTNOi',
+    'landing.subtitle': 'Easily convert any text into realistic speech, helping you <br/> work smoothly, finish tasks easily, and do it anywhere.',
     'landing.getStarted': 'Get Started',
     'landing.login': 'Log In',
     'landing.getapikey': 'Get API Key',
@@ -52,9 +52,10 @@ const translations = {
     'dashboard.welcomeBack': 'Welcome back',
     'dashboard.subtitle': 'Manage your Voice API key and integrate with n8n',
     'dashboard.totalRequests': 'Total Requests',
+    'dashboard.status': 'Status',
+    'dashboard.active': 'Active',
+    'dashboard.lastUsed': 'Last Used',
     'dashboard.never': 'Never',
-    'dashboard.note': 'Note',
-    'dashboard.notedetails': 'Please log in to get your API Key.',
     'dashboard.yourApiKey': 'Your API Key',
     'dashboard.regenerate': 'Regenerate',
     'dashboard.regenerating': 'Regenerating...',
@@ -115,8 +116,10 @@ const translations = {
     // Dashboard
     'dashboard.welcomeBack': 'ยินดีต้อนรับกลับมา',
     'dashboard.subtitle': 'จัดการ API key สำหรับ Voice API และเชื่อมต่อกับ n8n',
-    'dashboard.note': 'ประกาศ',
-    'dashboard.notedetails': 'โปรดเข้าสู่ระบบเพื่อรับ API Key ของคุณ',
+    'dashboard.totalRequests': 'คำขอทั้งหมด',
+    'dashboard.status': 'สถานะ',
+    'dashboard.active': 'ใช้งานอยู่',
+    'dashboard.lastUsed': 'ใช้งานล่าสุด',
     'dashboard.never': 'ไม่เคย',
     'dashboard.yourApiKey': 'API Key ของคุณ',
     'dashboard.regenerate': 'สร้างใหม่',
