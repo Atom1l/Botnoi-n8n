@@ -72,7 +72,7 @@ export default function Profile() {
                     <img
                       src={user.avatar}
                       alt={user.name}
-                      className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-5 border-white shadow-2xl"
+                      className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-white shadow-2xl"
                     />
                   </div>
                 ) : (
