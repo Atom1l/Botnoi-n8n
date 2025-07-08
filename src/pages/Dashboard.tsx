@@ -161,7 +161,7 @@ export default function Dashboard() {
             {!user && (
               <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className={`text-blue-800 text-sm ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                  <strong>Note:</strong> Please log in to generate and manage your API key. You can explore the documentation and examples below without logging in.
+                  <strong>{t('dashboard.note')}:</strong> {t('dashboard.notedetails')}
                 </p>
               </div>
             )}
