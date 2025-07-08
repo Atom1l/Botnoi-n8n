@@ -51,24 +51,18 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   };
 
   return (
-    <nav className="bg-white/80 backdrop-blur-xl shadow-xl border-b border-white/20 w-full relative">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-white/50 to-purple-50/50"></div>
-      
-      <div className="relative w-full px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow-md border-b w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <button 
             onClick={handleLogoClick}
-            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105"
+            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-lg"></div>
-              <img 
-                src="/botnoi_voice.svg" 
-                alt="Botnoi" 
-                className="relative h-24 w-24 transition-transform duration-300"
-              />
-            </div>
+            <img 
+              src="/botnoi_voice.svg" 
+              alt="Botnoi" 
+              className="h-24 w-24"
+            />
           </button>
           
           {user ? (
@@ -77,10 +71,10 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
               {showDocs && (
                 <button
                   onClick={() => navigate('/docs')}
-                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 px-4 py-2 rounded-lg hover:bg-white/50"
+                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   <Book className="h-5 w-5" />
-                  <span className={language === 'th' ? 'font-thai' : 'font-en'}>{t('nav.documentation')}</span>
+                  <span>{t('nav.documentation')}</span>
                 </button>
               )}
               
@@ -91,22 +85,19 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-all duration-300 focus:outline-none px-4 py-2 rounded-lg hover:bg-white/50"
+                  className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors focus:outline-none"
                 >
                   {/* Profile Avatar */}
                   <div className="flex items-center space-x-2">
                     {user.avatar ? (
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-sm opacity-50"></div>
-                        <img
-                          src={user.avatar}
-                          alt={user.name}
-                          className="relative w-8 h-8 rounded-full object-cover border-2 border-white shadow-lg"
-                        />
-                      </div>
+                      <img
+                        src={user.avatar}
+                        alt={user.name}
+                        className="w-8 h-8 rounded-full object-cover"
+                      />
                     ) : (
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
-                        <User className="h-5 w-5 text-white" />
+                      <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                        <User className="h-5 w-5 text-blue-600" />
                       </div>
                     )}
                     <span className={`font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user.name}</span>
@@ -116,18 +107,18 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/30 py-2 z-[9999]">
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
                     <button
                       onClick={handleProfileClick}
-                      className="flex items-center space-x-2 w-full px-4 py-3 text-left text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1"
+                      className="flex items-center space-x-2 w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors"
                     >
                       <User className="h-4 w-4" />
                       <span className={language === 'th' ? 'font-thai' : 'font-en'}>{t('nav.profile')}</span>
                     </button>
-                    <hr className="my-2 border-gray-200/50" />
+                    <hr className="my-1 border-gray-200" />
                     <button
                       onClick={handleLogout}
-                      className="flex items-center space-x-2 w-full px-4 py-3 text-left text-red-600 hover:bg-red-50 transition-all duration-300 rounded-lg mx-1"
+                      className="flex items-center space-x-2 w-full px-4 py-2 text-left text-red-600 hover:bg-red-50 transition-colors"
                     >
                       <LogOut className="h-4 w-4" />
                       <span className={language === 'th' ? 'font-thai' : 'font-en'}>{t('nav.logout')}</span>
@@ -138,17 +129,15 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
             </div>
           ) : ( 
             // Not logged in navigation
+      
             <div className="flex items-center space-x-4">
               {/* Language Dropdown */}
               <LanguageDropdown />
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-75"></div>
-                <button
-                  onClick={onLoginClick}
-                  className={`relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium transform hover:scale-105 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                    {t('nav.signIn')}
-                </button>
-              </div>
+              <button
+                onClick={onLoginClick}
+                className={`bg-[#01bffb] text-white px-6 py-2 rounded-lg hover:bg-[#05aee3] transition-colors font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                  {t('nav.signIn')}
+              </button>
             </div>
           )}
         </div>
