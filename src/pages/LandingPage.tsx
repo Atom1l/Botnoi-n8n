@@ -42,7 +42,6 @@ export default function LandingPage() {
               alt="Botnoi" 
               className="relative h-40 w-40 mb-6 mx-auto border-4 border-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:rotate-3 bg-white/80 backdrop-blur-sm"
             />
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
             </div>
           </div>
 
