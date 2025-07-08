@@ -178,6 +178,11 @@ export default function Dashboard() {
           <div className="px-6 py-4 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <h2 className={`text-lg font-semibold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.yourApiKey')}</h2>
+              <button
+                onClick={regenerateApiKey}
+                disabled={isRegenerating}
+                className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700 disabled:opacity-50 ${language === 'th' ? 'font-thai' : 'font-en'}`}
+              >
                 <RefreshCw className={`h-4 w-4 ${isRegenerating ? 'animate-spin' : ''}`} />
                 <span>{isRegenerating ? t('dashboard.regenerating') : t('dashboard.regenerate')}</span>
               </button>
