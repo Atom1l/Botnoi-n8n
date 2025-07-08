@@ -116,10 +116,10 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl rounded-xl shadow-2xl border border-white/20 py-2 z-50">
+                  <div className="absolute right-0 mt-2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/30 py-2 z-[9999]">
                     <button
                       onClick={handleProfileClick}
-                      className="flex items-center space-x-2 w-full px-4 py-3 text-left text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-2"
+                      className="flex items-center space-x-2 w-full px-4 py-3 text-left text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 rounded-lg mx-1"
                     >
                       <User className="h-4 w-4" />
                       <span className={language === 'th' ? 'font-thai' : 'font-en'}>{t('nav.profile')}</span>
@@ -127,7 +127,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
                     <hr className="my-2 border-gray-200/50" />
                     <button
                       onClick={handleLogout}
-                      className="flex items-center space-x-2 w-full px-4 py-3 text-left text-red-600 hover:bg-red-50 transition-all duration-300 rounded-lg mx-2"
+                      className="flex items-center space-x-2 w-full px-4 py-3 text-left text-red-600 hover:bg-red-50 transition-all duration-300 rounded-lg mx-1"
                     >
                       <LogOut className="h-4 w-4" />
                       <span className={language === 'th' ? 'font-thai' : 'font-en'}>{t('nav.logout')}</span>
