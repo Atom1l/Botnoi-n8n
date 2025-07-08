@@ -9,7 +9,7 @@ interface NavigationProps {
   showDocs?: boolean;
   onLoginClick?: () => void;
 }
-
+ 
 export default function Navigation({ showDocs = false, onLoginClick }: NavigationProps) {
   const { user, logout } = useAuth();
   const { language, t } = useLanguage();
@@ -39,14 +39,11 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   const handleLogout = () => {
     logout();
     setIsDropdownOpen(false);
-    navigate('/');
   };
 
   const handleLogoClick = () => {
     if (user) {
       navigate('/dashboard');
-    } else {
-      navigate('/');
     }
   };
 
@@ -56,7 +53,8 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
         <div className="flex justify-between items-center h-20">
           <button 
             onClick={handleLogoClick}
-            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+            className={`flex items-center space-x-3 ${user ? 'cursor-pointer hover:opacity-80 transition-opacity' : 'cursor-default'}`}
+            disabled={!user}
           >
             <img 
               src="/botnoi_voice.svg" 
