@@ -117,10 +117,10 @@ export default function Profile() {
                     <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                      {t('profile.emailAddress')}
-                    </p>
                     
+                    <p className="text-gray-600 text-xs sm:text-sm lg:text-base truncate">
+                      {user?.email}
+                    </p>
                   </div>
                 </div>
                 <span className={`text-xs sm:text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full font-medium self-start sm:self-auto flex-shrink-0 ${language === 'th' ? 'font-thai' : 'font-en'}`}>
