@@ -89,9 +89,6 @@ export default function Profile() {
                   <h1 className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-800 bg-clip-text text-transparent truncate max-w-full ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                     {user?.name}
                   </h1>
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-full p-1 flex-shrink-0">
-                    <Sparkles className="h-4 w-4 text-white" />
-                  </div>
                 </div>
                 <p className="text-gray-600 flex items-center justify-center sm:justify-start space-x-2 text-sm sm:text-base lg:text-lg">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
