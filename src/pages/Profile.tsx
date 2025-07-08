@@ -80,7 +80,6 @@ export default function Profile() {
                     <User className="h-10 w-10 sm:h-12 sm:w-12 text-white" />
                   </div>
                 )}
-
               </div>
               <div className="flex-1 text-center sm:text-left min-w-0">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 mb-2 sm:mb-3">
