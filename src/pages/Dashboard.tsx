@@ -141,47 +141,6 @@ export default function Dashboard() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.totalRequests')}</p>
-                <p className="text-2xl font-bold text-gray-900">{user ? apiKey.requests.toLocaleString() : '---'}</p>
-              </div>
-              <div className="bg-green-100 rounded-full p-3">
-                <Zap className="h-6 w-6 text-green-600" />
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.status')}</p>
-                <p className={`text-2xl font-bold ${user ? 'text-green-600' : 'text-gray-400'} ${language === 'th' ? 'font-thai' : 'font-en'}`}>
-                  {user ? t('dashboard.active') : 'Not Connected'}
-                </p>
-              </div>
-              <div className="bg-blue-100 rounded-full p-3">
-                <Key className="h-6 w-6 text-blue-600" />
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className={`text-sm text-gray-600 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('dashboard.lastUsed')}</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  {user && apiKey.lastUsed ? apiKey.lastUsed.toLocaleDateString() : '---'}
-                </p>
-              </div>
-              <div className="bg-purple-100 rounded-full p-3">
-                <Settings className="h-6 w-6 text-purple-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* API Key Section */}
         <div className="bg-white rounded-xl shadow-sm mb-8">
           <div className="px-6 py-4 border-b border-gray-200">
