@@ -165,7 +165,7 @@ export default function Profile() {
                     <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                       {t('profile.apitoken')}
                     </p>
-                    <div className="rounded-lg p-2 mt-1">
+                    <div className="rounded-lg p-2">
                       <p className="text-gray-600 font-mono text-xs sm:text-sm break-all">
                         {maskApiKey(user?.apiKey || '')}
                       </p>
