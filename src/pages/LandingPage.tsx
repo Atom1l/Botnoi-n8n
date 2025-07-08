@@ -13,7 +13,7 @@ export default function LandingPage() {
   const [showLogin, setShowLogin] = useState(false);
 
   if (user) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/dashboard" replace />; 
   }
 
   const handleGetStarted = () => {
@@ -21,7 +21,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-400">
+    <div className="min-h-screen bg-white">
       <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
