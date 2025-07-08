@@ -82,9 +82,6 @@ export default function LandingPage() {
                 <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto shadow-lg transform group-hover:rotate-12 transition-all duration-300">
                   <LogIn className="h-10 w-10 text-white" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
-                  <Zap className="w-3 h-3 text-white" />
-                </div>
               </div>
               <h3 className={`text-2xl font-bold text-gray-900 mb-4 min-h-[3.5rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}
                 dangerouslySetInnerHTML={{ __html: t('landing.login') }}>
@@ -103,9 +100,6 @@ export default function LandingPage() {
                 <div className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto shadow-lg transform group-hover:rotate-12 transition-all duration-300">
                   <Key className="h-10 w-10 text-white" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                  <Shield className="w-3 h-3 text-white" />
-                </div>
               </div>
               <h3 className={`text-2xl font-bold text-gray-900 mb-4 min-h-[3.5rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                 {t('landing.getapikey')}
@@ -123,9 +117,6 @@ export default function LandingPage() {
               <div className="relative mb-6">
                 <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto shadow-lg transform group-hover:rotate-12 transition-all duration-300">
                   <AudioLines className="h-10 w-10 text-white" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                  <Sparkles className="w-3 h-3 text-white" />
                 </div>
               </div>
               <h3 className={`text-2xl font-bold text-gray-900 mb-4 min-h-[3.5rem] flex items-center justify-center ${language === 'th' ? 'font-thai' : 'font-en'}`}>
