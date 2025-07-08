@@ -28,7 +28,7 @@ const translations = {
     'nav.documentation': 'Documentation',
     
     // Landing Page
-    'landing.title': 'BOTNOiVoice',
+    'landing.title': 'BOTNOi', 
     'landing.subtitle': 'Easily convert any text into realistic speech, helping you <br/> work smoothly, finish tasks easily, and do it anywhere.',
     'landing.getStarted': 'Get Started',
     'landing.login': 'Log In',
