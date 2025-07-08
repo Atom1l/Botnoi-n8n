@@ -32,20 +32,20 @@ export default function LandingPage() {
       <Navigation onLoginClick={() => setShowLogin(true)} />
       
       {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120rem)] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="text-center mb-8 sm:mb-12 max-w-6xl w-full">
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+        <div className="text-center mb-6 sm:mb-8 max-w-6xl w-full">
           {/* Logo with enhanced styling */}
-          <div className="relative mb-6 sm:mb-8">
+          <div className="relative mb-4 sm:mb-6">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-xl sm:blur-2xl transform scale-125 sm:scale-150"></div>
             <img 
               src="/botnoi.svg" 
               alt="Botnoi" 
-              className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 mb-4 sm:mb-6 mx-auto border-4 border-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:rotate-3 bg-white/80 backdrop-blur-sm"
+              className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 mb-3 sm:mb-4 mx-auto border-4 border-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:rotate-3 bg-white/80 backdrop-blur-sm"
             />
           </div>
 
           {/* Title with gradient text */}
-          <h1 className="font-en text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight px-2">
+          <h1 className="font-en text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight px-2">
             {t('landing.title')}
             <span className="block text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mt-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Voice API
@@ -53,12 +53,12 @@ export default function LandingPage() {
           </h1>
 
           {/* Subtitle with better typography */}
-          <div className={`text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}
+          <div className={`text-sm sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6 max-w-4xl mx-auto leading-relaxed px-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}
             dangerouslySetInnerHTML={{ __html: t('landing.subtitle') }}>
           </div> 
 
           {/* Enhanced CTA button */}
-          <div className="relative inline-block mb-8 sm:mb-12 border border-red-200">
+          <div className="relative inline-block mb-6 sm:mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg sm:rounded-xl blur-lg opacity-75 transform scale-105"></div>
             <button
               onClick={handleGetStarted}
