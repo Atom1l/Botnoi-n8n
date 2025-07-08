@@ -130,7 +130,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                     <div className="w-full border-t border-gray-300"></div>
                   </div>
                   <div className="relative flex justify-center text-sm">
-                    <span className={`px-3 sm:px-4 bg-white text-gray-500 font-medium text-xs sm:text-sm ${language === 'th' ? 'font-thai' : 'font-en'}`}>
+                    <span className={`px-3 sm:px-4 text-gray-500 font-medium text-xs sm:text-sm ${language === 'th' ? 'font-thai' : 'font-en'}`}>
                       {t('landing.continueWithEmail')}
                     </span>
                   </div>
