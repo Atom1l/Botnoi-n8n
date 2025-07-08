@@ -54,12 +54,12 @@ export default function Profile() {
 
       <Navigation />
 
-      <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Profile Header */}
         <div className="relative group mb-8">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
-          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-8">
-            <div className="flex items-center space-x-6">
+          <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
               <div className="relative">
                 {user?.avatar ? (
                   <div className="relative">
@@ -67,26 +67,26 @@ export default function Profile() {
                     <img
                       src={user.avatar}
                       alt={user.name}
-                      className="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-2xl"
+                      className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-2xl"
                     />
                   </div>
                 ) : (
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-2xl border-4 border-white">
-                    <User className="h-12 w-12 text-white" />
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-2xl border-4 border-white">
+                    <User className="h-10 w-10 sm:h-12 sm:w-12 text-white" />
                   </div>
                 )}
-                <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-3 shadow-xl border-2 border-gray-100">
+                <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 bg-white rounded-full p-2 sm:p-3 shadow-xl border-2 border-gray-100">
                   {getProviderIcon(user?.provider || 'email')}
                 </div>
               </div>
-              <div className="flex-1">
-                <div className="flex items-center space-x-3 mb-3">
-                  <h1 className={`text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-800 bg-clip-text text-transparent ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
+              <div className="flex-1 text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 mb-3">
+                  <h1 className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-800 bg-clip-text text-transparent ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.name}</h1>
                   <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-full p-1">
                     <Sparkles className="h-4 w-4 text-white" />
                   </div>
                 </div>
-                <p className="text-gray-600 flex items-center space-x-2 text-lg">
+                <p className="text-gray-600 flex items-center justify-center sm:justify-start space-x-2 text-base sm:text-lg">
                   <Mail className="h-5 w-5" />
                   <span>{user?.email}</span>
                 </p>
@@ -98,82 +98,82 @@ export default function Profile() {
         {/* Account Information */}
         <div className="relative group">
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-all duration-300"></div>
-          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-8">
-            <div className="flex items-center space-x-3 mb-6">
+          <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 p-4 sm:p-6 lg:p-8">
+            <div className="flex items-center justify-center sm:justify-start space-x-3 mb-6">
               <div className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl p-3">
                 <User className="h-6 w-6 text-white" />
               </div>
-              <h2 className={`text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountInfo')}</h2>
+              <h2 className={`text-xl sm:text-2xl font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.accountInfo')}</h2>
             </div>
-            <div className="space-y-6">
-              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-2xl border border-blue-200/50">
-                <div className="flex items-center space-x-4">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-4 px-4 sm:px-6 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-2xl border border-blue-200/50 space-y-3 sm:space-y-0">
+                <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-2">
                     <Mail className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.emailAddress')}</p>
-                    <p className="text-gray-600">{user?.email}</p>
+                    <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.emailAddress')}</p>
+                    <p className="text-gray-600 text-sm sm:text-base break-all">{user?.email}</p>
                   </div>
                 </div>
-                <span className={`text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.verified')}</span>
+                <span className={`text-xs sm:text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full font-medium self-start sm:self-auto ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.verified')}</span>
               </div>
               
-              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-green-50/50 to-emerald-50/50 rounded-2xl border border-green-200/50">
-                <div className="flex items-center space-x-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-4 px-4 sm:px-6 bg-gradient-to-r from-green-50/50 to-emerald-50/50 rounded-2xl border border-green-200/50 space-y-3 sm:space-y-0">
+                <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl p-2">
                     <User className="h-5 w-5 text-white" />
                   </div>
-                  <div>
-                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.uid')}</p>
-                    <p className="text-gray-600 font-mono text-sm">{user?.userId}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.uid')}</p>
+                    <p className="text-gray-600 font-mono text-xs sm:text-sm break-all">{user?.userId}</p>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard(user?.userId || '', 'userId')}
-                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 ${
+                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 self-start sm:self-auto ${
                     copiedUserId ? 'text-green-600' : ''
                   }`}
                 >
                   <Copy className="h-4 w-4" />
-                  <span className="text-xs font-medium">{copiedUserId ? 'Copied!' : 'Copy'}</span>
+                  <span className="text-xs font-medium hidden sm:inline">{copiedUserId ? 'Copied!' : 'Copy'}</span>
                 </button>
               </div>
               
-              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-2xl border border-purple-200/50">
-                <div className="flex items-center space-x-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-4 px-4 sm:px-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-2xl border border-purple-200/50 space-y-3 sm:space-y-0">
+                <div className="flex items-start space-x-3 sm:space-x-4 min-w-0 flex-1">
                   <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-2">
                     <Shield className="h-5 w-5 text-white" />
                   </div>
-                  <div>
-                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.apitoken')}</p>
-                    <p className="text-gray-600 font-mono text-sm">
+                  <div className="min-w-0 flex-1">
+                    <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.apitoken')}</p>
+                    <p className="text-gray-600 font-mono text-xs sm:text-sm break-all">
                       {user?.apiKey ? user.apiKey.substring(0, 8) + '•'.repeat(20) + user.apiKey.substring(user.apiKey.length - 4) : 'ไม่มี API Key'}
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard(user?.apiKey || '', 'apiKey')}
-                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 ${
+                  className={`flex items-center space-x-2 text-gray-400 hover:text-blue-600 transition-all duration-300 p-2 rounded-lg hover:bg-white/50 self-start sm:self-auto flex-shrink-0 ${
                     copiedApiKey ? 'text-green-600' : ''
                   }`}
                 >
                   <Copy className="h-4 w-4" />
-                  <span className="text-xs font-medium">{copiedApiKey ? 'Copied!' : 'Copy'}</span>
+                  <span className="text-xs font-medium hidden sm:inline">{copiedApiKey ? 'Copied!' : 'Copy'}</span>
                 </button>
               </div>
               
-              <div className="flex items-center justify-between py-4 px-6 bg-gradient-to-r from-yellow-50/50 to-orange-50/50 rounded-2xl border border-yellow-200/50">
-                <div className="flex items-center space-x-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-4 px-4 sm:px-6 bg-gradient-to-r from-yellow-50/50 to-orange-50/50 rounded-2xl border border-yellow-200/50 space-y-3 sm:space-y-0">
+                <div className="flex items-center space-x-3 sm:space-x-4">
                   <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl p-2">
                     <Shield className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className={`font-bold text-gray-900 ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.authMethod')}</p>
-                    <p className={`text-gray-600 capitalize ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.provider} {t('profile.signIn')}</p>
+                    <p className={`font-bold text-gray-900 text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>{t('profile.authMethod')}</p>
+                    <p className={`text-gray-600 capitalize text-sm sm:text-base ${language === 'th' ? 'font-thai' : 'font-en'}`}>{user?.provider} {t('profile.signIn')}</p>
                   </div>
                 </div>
-                <span className={`text-sm text-blue-600 bg-blue-100 px-3 py-1 rounded-full font-medium ${language === 'th' ? 'font-thai' : 'font-en'}`}>Active</span>
+                <span className={`text-xs sm:text-sm text-blue-600 bg-blue-100 px-3 py-1 rounded-full font-medium self-start sm:self-auto ${language === 'th' ? 'font-thai' : 'font-en'}`}>Active</span>
               </div>
             </div>
           </div>
