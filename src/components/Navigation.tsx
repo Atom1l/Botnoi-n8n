@@ -56,12 +56,12 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
         <div className="flex justify-between items-center h-20">
           <button 
             onClick={handleLogoClick}
-            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-lg p-2"
           >
             <img 
               src="/botnoi_voice.svg" 
               alt="Botnoi" 
-              className="h-24 w-24"
+              className="h-20 w-20 transition-transform duration-300"
             />
           </button>
           
