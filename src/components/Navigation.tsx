@@ -39,6 +39,7 @@ export default function Navigation({ showDocs = false, onLoginClick }: Navigatio
   const handleLogout = () => {
     logout();
     setIsDropdownOpen(false);
+    navigate('/');
   };
 
   const handleLogoClick = () => {
