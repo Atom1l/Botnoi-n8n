@@ -53,7 +53,7 @@ export default function LandingPage() {
           </h1>
 
           {/* Subtitle with better typography */}
-          <div className={`text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}
+          <div className={`text-sm sm:text-base md:text-lg text-gray-700 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2 ${language === 'th' ? 'font-thai' : 'font-en'}`}
             dangerouslySetInnerHTML={{ __html: t('landing.subtitle') }}>
           </div>
 
